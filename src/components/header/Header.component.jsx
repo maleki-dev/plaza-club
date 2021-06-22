@@ -1,9 +1,9 @@
 import React from 'react';
 
-import SearchBox from '../search-box/SearchBox.component';
+import SearchBox from '../search-box/search-box.component';
 
 import logo from '../../assets/images/logo.png';
-import * as S from './Header.styles';
+import * as S from './header.styles';
 
 const Header = () => {
   return (

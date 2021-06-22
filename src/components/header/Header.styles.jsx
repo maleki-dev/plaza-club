@@ -19,4 +19,5 @@ export const HeaderTop = styled.div`
 
 export const Logo = styled(Link)`
   margin-left: ${({ theme }) => theme.pxToRem(32)};
+  height: ${({ theme }) => theme.pxToRem(40)};
 `;
