@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchBox from '../search-box/search-box.component';
 import CustomButton from '../custom-button/custom-button.component';
+import HeaderNav from '../header-nav/header-nav.component';
 import { ReactComponent as UserIcon } from '../../assets/images/svg/__user.svg';
 import { ReactComponent as CartIcon } from '../../assets/images/svg/__cart.svg';
 
@@ -34,6 +35,9 @@ const Header = () => {
           </CustomButton>
         </S.HeaderButtonsContainer>
       </S.HeaderTop>
+      <S.HeaderBottom>
+        <HeaderNav />
+      </S.HeaderBottom>
     </S.Header>
   );
 };

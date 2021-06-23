@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const SearchBoxContainer = styled.div`
+  position: relative;
+  display: flex;
+`;
+
 export const SearchBox = styled.div`
   display: flex;
   position: relative;
@@ -8,6 +13,7 @@ export const SearchBox = styled.div`
   height: ${({ theme }) => theme.pxToRem(40)};
   max-width: ${({ theme }) => theme.pxToRem(661)};
   padding: ${({ theme }) => theme.pxToRem(10) + ' ' + theme.pxToRem(16)};
+  z-index: 100;
 `;
 
 export const SearchInput = styled.input`
@@ -31,5 +37,5 @@ export const SearchBoxContent = styled.div`
   top: calc(100% - ${({ theme }) => theme.pxToRem(5)});
   right: 0;
   width: 100%;
-  z-index: -1;
+  z-index: 99;
 `;

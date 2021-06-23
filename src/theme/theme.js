@@ -25,6 +25,7 @@ const fonts = {
 const border = {
   solidStroke: '1px solid ' + color.stroke,
   solidStrokeVarient: '1px solid ' + color.strokeVarient,
+  solidPrimaryThick: '4px solid ' + color.primary,
 };
 
 const theme = {

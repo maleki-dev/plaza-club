@@ -28,3 +28,8 @@ export const HeaderButtonsContainer = styled.div`
   justify-content: space-between;
   gap: ${({ theme }) => theme.pxToRem(16)};
 `;
+
+export const HeaderBottom = styled.div`
+  width: 100%;
+  padding: ${({ theme }) => 0 + ' ' + theme.pxToRem(16) + ' ' + theme.pxToRem(16)};
+`;

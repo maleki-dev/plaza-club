@@ -25,22 +25,24 @@ const SearchBox = () => {
   }, [searchBoxHidden]);
 
   return (
-    <S.SearchBox
-      ref={clickRef}
-      onClick={() => {
-        setSearchBoxHidden(false);
-      }}
-    >
-      <S.SearchInput {...searchInputProps} />
-      <S.SearchButton>
-        <SearchIcon />
-      </S.SearchButton>
+    <S.SearchBoxContainer>
+      <S.SearchBox
+        ref={clickRef}
+        onClick={() => {
+          setSearchBoxHidden(false);
+        }}
+      >
+        <S.SearchInput {...searchInputProps} />
+        <S.SearchButton>
+          <SearchIcon />
+        </S.SearchButton>
+      </S.SearchBox>
       {searchBoxHidden ? null : (
         <S.SearchBoxContent>
           <SearchContent />
         </S.SearchBoxContent>
       )}
-    </S.SearchBox>
+    </S.SearchBoxContainer>
   );
 };
 
