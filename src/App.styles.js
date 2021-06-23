@@ -9,11 +9,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        font-size: ${({ theme }) => theme.pxToRem(theme.htmlFontSize)};;
+        font-size: ${({ theme }) => theme.pxToRem(theme.htmlFontSize)};
     }
 
     body {
         max-width: ${({ theme }) => theme.pxToRem(100 * theme.htmlFontSize)};;
-        margin: 0 auto
+        margin: 0 auto;
+        color: ${({ theme }) => theme.color.onSurface};
     }
 `;

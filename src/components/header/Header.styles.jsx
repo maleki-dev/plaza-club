@@ -21,3 +21,10 @@ export const Logo = styled(Link)`
   margin-left: ${({ theme }) => theme.pxToRem(32)};
   height: ${({ theme }) => theme.pxToRem(40)};
 `;
+
+export const HeaderButtonsContainer = styled.div`
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: ${({ theme }) => theme.pxToRem(16)};
+`;

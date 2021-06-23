@@ -19,7 +19,7 @@ const fonts = {
   mdBold: 'bold 16px/21px Shabnam',
   mdNormal: 'normal 16px/21px Shabnam',
   smNormal: 'normal 14px/19px Shabnam',
-  xsNormal: 'normal 12x/16px Shabnam',
+  xsNormal: 'normal 12px/16px Shabnam',
 };
 
 const border = {

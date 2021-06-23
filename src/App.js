@@ -5,7 +5,7 @@ import Header from './components/header/header.component';
 const App = () => {
   console.log();
   return (
-    <div className="App">
+    <div>
       <GlobalStyles />
       <Header />
     </div>
