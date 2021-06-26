@@ -19,6 +19,7 @@ const fonts = {
   mdBold: 'bold 16px/21px Shabnam',
   mdNormal: 'normal 16px/21px Shabnam',
   smNormal: 'normal 14px/19px Shabnam',
+  smNormalHighLine: 'normal 14px/24px Shabnam',
   xsNormal: 'normal 12px/16px Shabnam',
 };
 

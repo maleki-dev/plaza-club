@@ -17,4 +17,9 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         color: ${({ theme }) => theme.color.onSurface};
     }
+
+    a {
+        text-decoration: none;
+        color: ${({ theme }) => theme.color.onSurface};
+    }
 `;

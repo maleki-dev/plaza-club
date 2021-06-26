@@ -16,7 +16,7 @@ const getDirection = props => {
 
 export const ArrowContainer = styled.span`
   fill: ${({ theme, fill }) => (fill ? theme.color[fill] : theme.color.onSurface)};
-  padding: ${({ theme }) => theme.pxToRem(4)};
-  transform: unset !important;
+  padding: ${({ theme }) => 0 + ' ' + theme.pxToRem(4)};
+  display: inline-block;
   ${getDirection}
 `;

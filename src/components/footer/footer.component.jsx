@@ -1,54 +1,80 @@
 import React from 'react';
 import * as S from './footer.styles';
 import NavItem from '../nav-item/nav-item.component';
+import SocialIcons from '../social-icons/social-icons.component';
+import { footerData } from './footer-data';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const { details, topNav, middleNav, enamadData, storeData, copyrightInfo } = footerData;
+  const { title: appTitle, text: aboutUsText } = details;
+
   return (
     <S.FooterContainer>
       <S.FooterTop>
-        <NavItem to="/">تماس با ما</NavItem>
-        <NavItem to="/">درباره ما</NavItem>
+        {topNav.map(item => (
+          <NavItem to={item.href} key={item.id}>
+            {item.text}
+          </NavItem>
+        ))}
       </S.FooterTop>
       <S.FooterContent>
-        <S.FooterNav>
-          <S.FooterNavTitle>راهنمای خرید</S.FooterNavTitle>
-          <S.FooterNavWrapper>
-            <NavItem hovereffect="true" to="/">
-              سوالات متداول
-            </NavItem>
-            <NavItem hovereffect="true" to="/">
-              شیوه خرید و ثبت سفارش
-            </NavItem>
-            <NavItem to="/">شیوه های پرداخت</NavItem>
-            <NavItem to="/">شرایط استفاده از پلازا بن</NavItem>
-            <NavItem to="/">حریم خصوصی و قوانین استفاده</NavItem>
-          </S.FooterNavWrapper>
-        </S.FooterNav>
-        <S.FooterNav>
-          <S.FooterNavTitle>مشتریان</S.FooterNavTitle>
-          <S.FooterNavWrapper>
-            <NavItem to="/">باشگاه مشتریان پلازا</NavItem>
-            <NavItem to="/">شرایط ارسال و تحویل کالا</NavItem>
-            <NavItem to="/">خدمات گارانتی و تحویل کالا</NavItem>
-            <NavItem to="/">پیگیری سفارشات</NavItem>
-          </S.FooterNavWrapper>
-        </S.FooterNav>
-        <S.FooterNav>
-          <S.FooterNavTitle>همکاری با پلازا</S.FooterNavTitle>
-          <S.FooterNavWrapper>
-            <NavItem to="/">پنل فروشندگان پلازا</NavItem>
-            <NavItem to="/">همکاری با سازمان ها</NavItem>
-            <NavItem to="/">فرصت های شغلی</NavItem>
-          </S.FooterNavWrapper>
-        </S.FooterNav>
-        <S.FooterNav>
-          <S.FooterNavTitle>پشتیبانی پلازا همیشه آماده پاسخگویی به شماست</S.FooterNavTitle>
-          <S.FooterNavWrapper>
-            <NavItem notLink={true}>021 - 66711204</NavItem>
-            <NavItem notLink={true}>info@plaza.ir</NavItem>
-            <NavItem notLink={true}>تهران، خیابان جمهوری، خیابان حافظ، خیابان هاتف، پلاک 8</NavItem>
-          </S.FooterNavWrapper>
-        </S.FooterNav>
+        {middleNav.map(footerNav => (
+          <S.FooterNav key={footerNav.id}>
+            <S.FooterNavTitle>{footerNav.title}</S.FooterNavTitle>
+            <S.FooterNavWrapper>
+              {footerNav.items.map(item => {
+                const itemProps = {
+                  key: item.id,
+                  hovereffect: item.hovereffect ? 'true' : null,
+                  notlink: item.href ? null : true,
+                  to: item.href || null,
+                };
+                return <NavItem {...itemProps}>{item.text}</NavItem>;
+              })}
+            </S.FooterNavWrapper>
+          </S.FooterNav>
+        ))}
+      </S.FooterContent>
+      <S.FooterContent $high={true}>
+        {enamadData.map(enamad => (
+          <S.FooterEnamad key={enamad.id}>
+            <S.FooterEnamadLink href={enamad.href}>
+              <img src={enamad.imageUrl} alt={enamad.alt} />
+            </S.FooterEnamadLink>
+          </S.FooterEnamad>
+        ))}
+        <S.FooterDetails>
+          <Link to={appTitle.href}>
+            <img src={appTitle.imageUrl} alt={appTitle.alt} />
+          </Link>
+          <S.FooterAboutUs>{aboutUsText}</S.FooterAboutUs>
+        </S.FooterDetails>
+      </S.FooterContent>
+      <S.FooterContent>
+        <S.FooterStoreContainer>
+          {storeData.map(item => (
+            <S.FooterStoreItem key={item.id} href={item.href}>
+              <img src={item.imageUrl} alt={item.id} />
+            </S.FooterStoreItem>
+          ))}
+        </S.FooterStoreContainer>
+      </S.FooterContent>
+      <S.FooterContent>
+        <SocialIcons />
+      </S.FooterContent>
+      <S.FooterContent>
+        <S.CopyrightContainer>
+          <p>{copyrightInfo.text}</p>
+          <S.CopyrightPale>
+            <span>Copyright © </span>
+            <span>
+              {copyrightInfo.dateStart.getFullYear()} - {copyrightInfo.dateEnd.getFullYear() + ' '}
+            </span>
+            <Link to={copyrightInfo.href}>{copyrightInfo.link}</Link>
+            <span> - All rights reserved</span>
+          </S.CopyrightPale>
+        </S.CopyrightContainer>
       </S.FooterContent>
     </S.FooterContainer>
   );

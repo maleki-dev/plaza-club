@@ -8,6 +8,7 @@ export const Header = styled.header`
   height: ${({ theme }) => theme.pxToRem(110)};
   position: sticky;
   top: 0;
+  z-index: 90;
   background-color: ${({ theme }) => theme.color.background};
   border-bottom: 1px solid ${({ theme }) => theme.color.stroke}; ;
 `;

@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
+
+const transitionOpacity = css`
+  transition: opacity 0.3s;
+`;
 
 const getItemColor = props => {
   if (props.color) {
@@ -9,34 +13,46 @@ const getItemColor = props => {
   return props.theme.color.onSurface;
 };
 
-export const NavItemText = styled.span`
-  transition: transform 0.3s;
-`;
-
 export const NavItemBefore = styled.span`
-  transition: transform 0.3s;
+  opacity: 0;
+  margin-left: ${({ theme }) => theme.pxToRem(4)};
+  ${transitionOpacity}
 `;
 
 export const NavItemAfter = styled.span`
-  transition: transform 0.3s;
+  opacity: 1;
+  margin-right: ${({ theme }) => theme.pxToRem(4)};
+  ${transitionOpacity}
 `;
+
+const hoverStyles = css`
+  display: inline-flex;
+  transform: translateX(${({ theme }) => theme.pxToRem(20)});
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateX(0);
+
+    ${NavItemBefore} {
+      opacity: 1;
+    }
+
+    ${NavItemAfter} {
+      opacity: 0;
+    }
+  }
+`;
+
+const getHoverStyles = props => {
+  if (props.hovereffect) {
+    return hoverStyles;
+  }
+  return null;
+};
 
 export const NavItemContainer = styled(Link)`
   font: ${({ theme }) => theme.fonts.mdNormal};
   color: ${props => getItemColor(props)};
   text-decoration: none;
-
-  &:hover {
-    ${NavItemText} {
-      //transform: translateX(-8px);
-    }
-
-    ${NavItemBefore} {
-      // transform: translateX(-8px);
-    }
-
-    ${NavItemAfter} {
-      //transform: translateX(-8px);
-    }
-  }
+  ${getHoverStyles}
 `;

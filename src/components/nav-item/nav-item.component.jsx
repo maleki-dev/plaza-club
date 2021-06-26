@@ -5,13 +5,13 @@ import Arrow from '../arrow/arrow.component';
 const NavItem = props => {
   const { children, ...otherProps } = props;
   return (
-    <S.NavItemContainer as={props.notLink ? 'span' : null} {...otherProps}>
+    <S.NavItemContainer as={props.notlink ? 'span' : null} {...otherProps}>
       {props.hovereffect ? (
         <S.NavItemBefore>
           <Arrow direction="left" fill="primary" />
         </S.NavItemBefore>
       ) : null}
-      <S.NavItemText>{children}</S.NavItemText>
+      {children}
       {props.hovereffect ? (
         <S.NavItemAfter>
           <Arrow direction="left" fill="unselected" />
