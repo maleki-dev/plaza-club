@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     * {
         padding: 0;
         margin: 0;
@@ -23,3 +23,5 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.color.onSurface};
     }
 `;
+
+export default GlobalStyles;

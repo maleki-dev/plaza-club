@@ -1,9 +1,10 @@
 import React from 'react';
+import { footerData } from './footer-data';
+import { Link } from 'react-router-dom';
+
 import * as S from './footer.styles';
 import NavItem from '../nav-item/nav-item.component';
 import SocialIcons from '../social-icons/social-icons.component';
-import { footerData } from './footer-data';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { details, topNav, middleNav, enamadData, storeData, copyrightInfo } = footerData;

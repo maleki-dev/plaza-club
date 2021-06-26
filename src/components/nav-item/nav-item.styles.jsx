@@ -5,6 +5,12 @@ const transitionOpacity = css`
   transition: opacity 0.3s;
 `;
 
+const BeforeStyles = css`
+  margin-left: ${({ theme }) => theme.pxToRem(16)};
+  fill: ${({ theme, fill }) => theme.color[fill]};
+  display: inline-flex;
+`;
+
 const getItemColor = props => {
   if (props.color) {
     return props.theme.color[props.color];
@@ -44,15 +50,20 @@ const hoverStyles = css`
 `;
 
 const getHoverStyles = props => {
-  if (props.hovereffect) {
-    return hoverStyles;
-  }
+  if (props.hovereffect) return hoverStyles;
   return null;
 };
+
+export const Before = styled.span`
+  ${props => (props.before ? BeforeStyles : null)};
+`;
 
 export const NavItemContainer = styled(Link)`
   font: ${({ theme }) => theme.fonts.mdNormal};
   color: ${props => getItemColor(props)};
   text-decoration: none;
+  display: flex;
+  align-items: center;
+
   ${getHoverStyles}
 `;

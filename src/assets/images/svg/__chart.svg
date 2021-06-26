@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.4" height="20.4" viewBox="0 0 20.4 20.4">
+  <g id="__ico" transform="translate(0.2 0.2)">
+    <g id="Group_88" data-name="Group 88">
+      <g id="Group_87" data-name="Group 87">
+        <path id="Path_1031" data-name="Path 1031" d="M363.083,138.832h2.5a.417.417,0,0,0,.417-.417v-8a.417.417,0,0,0-.417-.417h-2.5a.417.417,0,0,0-.417.417v8A.417.417,0,0,0,363.083,138.832Zm.417-8h1.667V138H363.5Z" transform="translate(-350.499 -123.999)" fill="#2b273c" stroke="#2b273c" stroke-width="0.4"/>
+        <path id="Path_1032" data-name="Path 1032" d="M19.583,17.5H2.5V.417a.417.417,0,1,0-.833,0V17.5H.417a.417.417,0,1,0,0,.833h1.25v1.25a.417.417,0,1,0,.833,0v-1.25H19.583a.417.417,0,1,0,0-.833Z" fill="#2b273c" stroke="#2b273c" stroke-width="0.4"/>
+        <path id="Path_1033" data-name="Path 1033" d="M235.083,36.333h2.5a.417.417,0,0,0,.417-.417V23.75a.417.417,0,0,0-.417-.417h-2.5a.417.417,0,0,0-.417.417V35.916A.417.417,0,0,0,235.083,36.333Zm.417-12.167h1.667V35.5H235.5Z" transform="translate(-228.499 -21.5)" fill="#2b273c" stroke="#2b273c" stroke-width="0.4"/>
+      </g>
+    </g>
+  </g>
+</svg>

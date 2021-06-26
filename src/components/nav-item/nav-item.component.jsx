@@ -11,6 +11,11 @@ const NavItem = props => {
           <Arrow direction="left" fill="primary" />
         </S.NavItemBefore>
       ) : null}
+      {props.before ? (
+        <S.Before before={props.before} fill={props.color || 'onSurface'}>
+          {props.before}
+        </S.Before>
+      ) : null}
       {children}
       {props.hovereffect ? (
         <S.NavItemAfter>
