@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const smallButtonProperties = css`
-  padding: ${({ theme }) => theme.pxToRem(4) + ' ' + theme.pxToRem(8)};
+  padding: ${({ theme }) => theme.pxToRem('4 8')};
   font: ${({ theme }) => theme.fonts.xsNormal};
 `;
 
@@ -11,7 +11,7 @@ const mediumButtonProperties = css`
 `;
 
 const mediumWideButtonProperties = css`
-  padding: ${({ theme }) => theme.pxToRem(10) + ' ' + theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('10 16')};
 `;
 
 const getButtonSizeStyles = props => {

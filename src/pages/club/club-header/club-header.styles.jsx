@@ -10,5 +10,5 @@ export const Container = styled.div`
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => theme.pxToRem(-16) + ' ' + 0};
+  margin: ${({ theme }) => theme.pxToRem('-16 0')};
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  border-radius: ${({ theme }) => theme.pxToRem(4) + ' ' + theme.pxToRem(4) + ' '} 0 0;
+  border-radius: ${({ theme }) => theme.pxToRem('4 4 0 0')};
   background-color: ${({ theme }) => theme.color.surface};
   padding: ${({ theme }) => theme.pxToRem(24)};
 
@@ -44,5 +44,5 @@ export const HeaderUserLevel = styled.div`
 
 export const HeaderUserLevelColor = styled.span`
   color: ${({ theme, color }) => theme.color[color]};
-  margin: ${({ theme }) => 0 + ' ' + theme.pxToRem(8) + ' ' + 0 + ' ' + theme.pxToRem(16)};
+  margin: ${({ theme }) => theme.pxToRem('0 8 0 16')};
 `;

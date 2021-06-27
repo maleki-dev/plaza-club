@@ -36,8 +36,16 @@ const theme = {
   fonts,
   border,
 
-  pxToRem(px) {
-    return px / this.htmlFontSize + 'rem';
+  pxToRem(input) {
+    const reference = this.htmlFontSize;
+    if (typeof input === 'string') {
+      return input
+        .split(' ')
+        .map(value => (value !== '0' ? value / reference + 'rem' : 0))
+        .join(' ');
+    } else if (typeof input === 'number') {
+      return input / reference + 'rem';
+    }
   },
 };
 

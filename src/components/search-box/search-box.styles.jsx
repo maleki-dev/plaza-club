@@ -12,7 +12,7 @@ export const SearchBox = styled.div`
   border: ${({ theme }) => theme.border.solidStroke};
   height: ${({ theme }) => theme.pxToRem(40)};
   max-width: ${({ theme }) => theme.pxToRem(661)};
-  padding: ${({ theme }) => theme.pxToRem(10) + ' ' + theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('10 16')};
   z-index: 100;
 `;
 

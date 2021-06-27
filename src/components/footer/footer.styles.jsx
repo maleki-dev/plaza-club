@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
 const highContent = css`
-  padding: ${({ theme }) => theme.pxToRem(32) + ' ' + 0};
+  padding: ${({ theme }) => theme.pxToRem('32 0')};
 `;
 
 export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   border-top: ${({ theme }) => theme.border.solidStroke};
-  padding: ${({ theme }) => theme.pxToRem(24) + ' ' + theme.pxToRem(16) + ' ' + theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('24 16 16')};
 `;
 
 export const FooterTop = styled.div`

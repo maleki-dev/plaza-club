@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ClubPageContainer = styled.section`
-  padding: ${({ theme }) => theme.pxToRem(32) + ' ' + theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('32 16')};
 `;
 
 export const Row = styled.div`

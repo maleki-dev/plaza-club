@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: ${({ theme }) => theme.pxToRem(60) + ' ' + theme.pxToRem(50) + ' ' + theme.pxToRem(40)};
+  padding: ${({ theme }) => theme.pxToRem('60 50 40')};
 `;
 
 export const Heading = styled.div`

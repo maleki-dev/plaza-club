@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Footer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${({ theme }) => 0 + ' ' + theme.pxToRem(32) + ' ' + theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('0 32 16')};
 `;
 
 export const PointsRange = styled.div`
-  margin: ${({ theme }) => theme.pxToRem(4) + ' ' + 0};
+  margin: ${({ theme }) => theme.pxToRem('4 0')};
   display: flex;
   width: 100%;
   padding-bottom: ${({ theme }) => theme.pxToRem(2)};
