@@ -45,8 +45,7 @@ const UserDashboard = () => {
         <S.PointsContainer>
           <span>امتیاز شما: </span>
           <div>
-            <S.MaxPoint>{maxPoint.toLocaleString()}</S.MaxPoint>
-            <span> / </span>
+            <S.MaxPoint>{maxPoint.toLocaleString() + ' / '}</S.MaxPoint>
             <S.UserPoint>{point.toLocaleString()}</S.UserPoint>
           </div>
         </S.PointsContainer>

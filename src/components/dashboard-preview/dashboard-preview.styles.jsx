@@ -5,6 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   border: ${({ theme }) => theme.border.solidStroke};
+  flex-basis: 19.6%;
+  //flex-grow: 1;
 `;
 
 export const Header = styled.div`
@@ -13,6 +15,12 @@ export const Header = styled.div`
   border-radius: ${({ theme }) => theme.pxToRem(4) + ' ' + theme.pxToRem(4) + ' '} 0 0;
   background-color: ${({ theme }) => theme.color.surface};
   padding: ${({ theme }) => theme.pxToRem(24)};
+
+  @media screen and (max-width: 1360px) {
+    & button {
+      display: none;
+    }
+  }
 `;
 
 export const HeaderUserIcon = styled.div`
@@ -33,7 +41,7 @@ export const HeaderUserDetails = styled.div`
 `;
 
 export const HeaderUserName = styled.div`
-  font: ${({ theme }) => theme.fonts.bigBold};
+  font: ${({ theme }) => theme.fonts.lgBold};
   margin-bottom: ${({ theme }) => theme.pxToRem(4)};
 `;
 

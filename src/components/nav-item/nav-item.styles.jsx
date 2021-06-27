@@ -5,7 +5,7 @@ const transitionOpacity = css`
   transition: opacity 0.3s;
 `;
 
-const BeforeStyles = css`
+const beforeStyles = css`
   margin-left: ${({ theme }) => theme.pxToRem(16)};
   fill: ${({ theme, fill }) => theme.color[fill]};
   display: inline-flex;
@@ -55,11 +55,11 @@ const getHoverStyles = props => {
 };
 
 export const Before = styled.span`
-  ${props => (props.before ? BeforeStyles : null)};
+  ${props => (props.before ? beforeStyles : null)};
 `;
 
 export const NavItemContainer = styled(Link)`
-  font: ${({ theme }) => theme.fonts.mdNormal};
+  font: ${props => props.theme.fonts[props.$larg ? 'lgBold' : 'mdNormal']};
   color: ${props => getItemColor(props)};
   text-decoration: none;
   display: flex;

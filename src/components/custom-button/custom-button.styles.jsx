@@ -21,7 +21,7 @@ const getButtonSizeStyles = props => {
   else return null;
 };
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   display: flex;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.pxToRem(4)};
