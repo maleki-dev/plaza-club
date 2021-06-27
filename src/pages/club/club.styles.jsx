@@ -7,4 +7,5 @@ export const ClubPageContainer = styled.section`
 export const Row = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  gap: ${({ theme }) => theme.pxToRem(32)};
 `;

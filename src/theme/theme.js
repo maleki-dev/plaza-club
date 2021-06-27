@@ -14,6 +14,7 @@ const color = {
 
 const fonts = {
   xxBigBold: 'bold 40px/53px Shabnam',
+  xBigBold: 'bold 32px/43px Shabnam',
   bigBold: 'bold 24px/32px Shabnam',
   lgBold: 'bold 18px/24px Shabnam',
   mdBold: 'bold 16px/21px Shabnam',
