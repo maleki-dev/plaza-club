@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container } from './widget.style';
+import { Container, Header, Footer } from './widget.style';
 
-const Widget = ({ header, footer, children }) => {
+const Widget = props => {
+  const { $header, $footer, children, ...otherProps } = props;
   return (
     <Container>
-      {header}
+      <Header>{$header}</Header>
       {children}
-      {footer}
+      <Footer {...otherProps}>{$footer}</Footer>
     </Container>
   );
 };

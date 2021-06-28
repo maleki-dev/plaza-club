@@ -3,8 +3,8 @@ import * as S from './club.styles';
 import ClubHeader from './club-header/club-header.component';
 import UserDashboard from '../../components/dashboard-preview/dashboard-preview.component';
 import Banner from '../../components/banner/banner.component';
-import Widget from '../../components/widget/widget.component';
-import CustomButton from '../../components/custom-button/custom-button.component';
+import WidgetBox from './widget-box/widget-box.component';
+
 const ClubPage = () => {
   return (
     <div>
@@ -13,6 +13,7 @@ const ClubPage = () => {
         <S.Row>
           <UserDashboard />
           <Banner />
+          <WidgetBox />
         </S.Row>
       </S.ClubPageContainer>
     </div>

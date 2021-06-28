@@ -9,7 +9,7 @@ import menuData from './dashboard-menu-data';
 
 const UserDashboard = () => {
   return (
-    <Widget header={<DashboardHeader />} footer={<DashboardFooter />}>
+    <Widget $header={<DashboardHeader />} $footer={<DashboardFooter />}>
       <S.Content>
         {menuData.map(menuItem => (
           <NavItem

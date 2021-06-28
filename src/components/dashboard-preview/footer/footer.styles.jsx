@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Footer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${({ theme }) => theme.pxToRem('0 32 16')};
+  //padding: ${({ theme }) => theme.pxToRem('0 32 16')};
 `;
 
 export const PointsRange = styled.div`

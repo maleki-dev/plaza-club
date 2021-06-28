@@ -6,6 +6,7 @@ export const Header = styled.div`
   border-radius: ${({ theme }) => theme.pxToRem('4 4 0 0')};
   background-color: ${({ theme }) => theme.color.surface};
   padding: ${({ theme }) => theme.pxToRem(24)};
+  margin: ${({ theme }) => theme.pxToRem('-32 -32 0')};
 
   @media screen and (max-width: 1360px) {
     & button {
@@ -32,13 +33,13 @@ export const HeaderUserDetails = styled.div`
 `;
 
 export const HeaderUserName = styled.div`
-  font: ${({ theme }) => theme.fonts.lgBold};
   margin-bottom: ${({ theme }) => theme.pxToRem(4)};
 `;
 
 export const HeaderUserLevel = styled.div`
   display: flex;
   align-items: baseline;
+  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 export const HeaderUserLevelColor = styled.span`
