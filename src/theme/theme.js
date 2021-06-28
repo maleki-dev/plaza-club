@@ -22,6 +22,7 @@ const fonts = {
   smNormal: 'normal 14px/19px Shabnam',
   smNormalHighLine: 'normal 14px/24px Shabnam',
   xsNormal: 'normal 12px/16px Shabnam',
+  xxsNormal: 'normal 10px/14px Shabnam',
 };
 
 const border = {

@@ -2,15 +2,17 @@ import styled, { css } from 'styled-components';
 
 const smallButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('4 8')};
-  font: ${({ theme }) => theme.fonts.xsNormal};
+  font: ${({ theme }) => theme.fonts.smNormal};
 `;
 
 const mediumButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem(10)};
+  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 const mediumWideButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('10 16')};
+  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 const getButtonSizeStyles = props => {
