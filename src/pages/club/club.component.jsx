@@ -4,7 +4,7 @@ import ClubHeader from './club-header/club-header.component';
 import UserDashboard from '../../components/dashboard-preview/dashboard-preview.component';
 import Banner from '../../components/banner/banner.component';
 import Widget from '../../components/widget/widget.component';
-
+import CustomButton from '../../components/custom-button/custom-button.component';
 const ClubPage = () => {
   return (
     <div>
@@ -13,7 +13,6 @@ const ClubPage = () => {
         <S.Row>
           <UserDashboard />
           <Banner />
-          <Widget></Widget>
         </S.Row>
       </S.ClubPageContainer>
     </div>

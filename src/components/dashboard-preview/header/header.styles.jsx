@@ -39,7 +39,6 @@ export const HeaderUserName = styled.div`
 export const HeaderUserLevel = styled.div`
   display: flex;
   align-items: baseline;
-  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 export const HeaderUserLevelColor = styled.span`

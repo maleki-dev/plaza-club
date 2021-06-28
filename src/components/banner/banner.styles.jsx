@@ -34,6 +34,4 @@ export const HeadingTitle = styled.h1`
   margin-bottom: ${({ theme }) => theme.pxToRem(8)};
 `;
 
-export const HeadingSubtitle = styled.h3`
-  font: ${({ theme }) => theme.fonts.mdNormal};
-`;
+export const HeadingSubtitle = styled.h3``;

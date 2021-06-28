@@ -33,7 +33,6 @@ export const PointsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 export const MaxPoint = styled.span`

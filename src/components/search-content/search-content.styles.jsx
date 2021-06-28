@@ -9,7 +9,6 @@ export const SearchContentContainer = styled.div`
 `;
 
 export const SearchContentHeader = styled.h3`
-  font: ${({ theme }) => theme.fonts.mdNormal};
   margin: ${({ theme }) => theme.pxToRem('4 0')};
   padding: ${({ theme }) => theme.pxToRem('8 16')};
 `;

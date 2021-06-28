@@ -7,7 +7,6 @@ const smallButtonProperties = css`
 
 const mediumButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem(10)};
-  font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
 const mediumWideButtonProperties = css`
