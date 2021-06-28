@@ -8,13 +8,3 @@ export const Container = styled.div`
   border: ${({ theme }) => theme.border.solidStroke};
   flex-basis: 23.5%;
 `;
-
-export const Header = styled.div`
-  margin-bottom: ${({ theme }) => theme.pxToRem(16)};
-  font: ${({ theme }) => theme.fonts.lgBold};
-`;
-
-export const Footer = styled.div`
-  margin-top: ${({ theme }) => theme.pxToRem(16)};
-  align-self: ${props => (props.$footerLeft ? 'flex-end' : 'unset')};
-`;

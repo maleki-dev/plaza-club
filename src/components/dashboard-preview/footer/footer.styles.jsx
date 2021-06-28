@@ -7,7 +7,7 @@ export const Footer = styled.div`
 `;
 
 export const PointsRange = styled.div`
-  margin: ${({ theme }) => theme.pxToRem('4 0')};
+  margin: ${({ theme }) => theme.pxToRem('8 0')};
   display: flex;
   width: 100%;
   padding-bottom: ${({ theme }) => theme.pxToRem(2)};

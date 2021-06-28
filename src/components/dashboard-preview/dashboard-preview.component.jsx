@@ -9,7 +9,8 @@ import menuData from './dashboard-menu-data';
 
 const UserDashboard = () => {
   return (
-    <Widget $header={<DashboardHeader />} $footer={<DashboardFooter />}>
+    <Widget>
+      <DashboardHeader />
       <S.Content>
         {menuData.map(menuItem => (
           <NavItem
@@ -22,6 +23,7 @@ const UserDashboard = () => {
           </NavItem>
         ))}
       </S.Content>
+      <DashboardFooter />
     </Widget>
   );
 };
