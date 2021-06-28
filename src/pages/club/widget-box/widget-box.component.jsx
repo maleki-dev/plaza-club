@@ -10,7 +10,7 @@ const WidgetBox = () => {
         <Header>ارتقا به سطح نقره ای</Header>
         فقط 22،560 امتیاز دیگه تا رسیدن به سطح نقره ای و کلی جوایز و تخفیف های ویژه
         <Footer>
-          <CustomButton color="primary" size="small" to="/">
+          <CustomButton $color="primary" $size="small" to="/">
             افزایش سطح
           </CustomButton>
         </Footer>
@@ -19,7 +19,7 @@ const WidgetBox = () => {
         <Header>هم خرید بیشتر، تخفیف بیشتر!</Header>
         هر چقدر هم خریدات بیشتر باشن سریعتر ارتقا سطح پیدا میکنی
         <Footer>
-          <CustomButton color="secondary" size="small" to="/">
+          <CustomButton $color="secondary" $size="small" to="/">
             افزودن هم خرید جدید
           </CustomButton>
         </Footer>

@@ -21,8 +21,9 @@ export const HeaderUserIcon = styled.div`
   justify-content: center;
   min-width: ${({ theme }) => theme.pxToRem(48)};
   min-height: ${({ theme }) => theme.pxToRem(48)};
-  background-color: ${({ theme, color }) => theme.color[color]};
+  background-color: ${({ theme, $color }) => theme.color[$color]};
   border-radius: 50%;
+  fill: ${({ theme }) => theme.color.background};
   margin-left: ${({ theme }) => theme.pxToRem(16)};
 `;
 
@@ -34,6 +35,7 @@ export const HeaderUserDetails = styled.div`
 
 export const HeaderUserName = styled.div`
   margin-bottom: ${({ theme }) => theme.pxToRem(4)};
+  font: ${({ theme }) => theme.fonts.lgBold};
 `;
 
 export const HeaderUserLevel = styled.div`

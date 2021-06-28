@@ -11,12 +11,13 @@ import * as S from './header.styles';
 
 const Header = () => {
   const cartButtonProps = {
-    color: 'background',
-    size: 'medium',
+    $color: 'background',
+    $size: 'medium',
   };
   const userButtonProps = {
-    color: 'success',
-    size: 'medium',
+    $color: 'success',
+    $size: 'medium',
+    $fill: 'background',
   };
 
   return (

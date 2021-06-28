@@ -16,7 +16,7 @@ const ProductCard = ({ imageUrl, href, price, name, point }) => {
         امتیاز خرید: <span>{point}</span>
       </S.ProductPoint>
       <S.Details>
-        <CustomButton to={href} color="primary" size="mediumWide">
+        <CustomButton to={href} $color="primary" $size="mediumWide">
           مشاهده
         </CustomButton>
         <S.PriceContainer>

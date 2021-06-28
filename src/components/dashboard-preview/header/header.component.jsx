@@ -9,7 +9,7 @@ const { color, levelName } = levelsData[level];
 const DashboardHeader = () => {
   return (
     <S.Header>
-      <S.HeaderUserIcon color={color}>
+      <S.HeaderUserIcon $color={color}>
         <UserIcon />
       </S.HeaderUserIcon>
       <S.HeaderUserDetails>
@@ -17,7 +17,7 @@ const DashboardHeader = () => {
         <S.HeaderUserLevel>
           <span>سطح شما: </span>
           <S.HeaderUserLevelColor color={color}>{levelName}</S.HeaderUserLevelColor>
-          <CustomButton size="small" color="background">
+          <CustomButton $size="small" $color="background">
             افزایش سطح
           </CustomButton>
         </S.HeaderUserLevel>

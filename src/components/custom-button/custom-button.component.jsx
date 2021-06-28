@@ -5,7 +5,7 @@ const CustomButton = props => {
   const { children, ...otherProps } = props;
   return (
     <S.ButtonContainer {...otherProps}>
-      <S.ButtonInner>{children}</S.ButtonInner>
+      <S.ButtonInner $fill={otherProps.$fill || null}>{children}</S.ButtonInner>
     </S.ButtonContainer>
   );
 };
