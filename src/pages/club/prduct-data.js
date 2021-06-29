@@ -1,15 +1,15 @@
 const productData = [
-  {
-    id: 1,
-    name: 'اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد',
-    price: {
-      old: 1800000,
-      new: 1650000,
-    },
-    imageUrl: './images/products/__img1.png',
-    href: '/',
-    point: 160,
-  },
+  // {
+  //   id: 1,
+  //   name: 'اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد',
+  //   price: {
+  //     old: 1800000,
+  //     new: 1650000,
+  //   },
+  //   imageUrl: './images/products/__img1.png',
+  //   href: '/',
+  //   point: 160,
+  // },
   {
     id: 2,
     name: 'دسته بازی پلی استیشن 4 قرمز رنگ',

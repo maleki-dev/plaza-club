@@ -1,22 +1,32 @@
 import React from 'react';
-import { Route, Router, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import GlobalStyles from './App.styles.js';
+import MainLayout from './layouts/main/main.layout.jsx';
 import PageWrapper from './components/page-wrapper/page-wrapper.component';
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
-import ClubPage from './pages/club/club.component.jsx';
+import Home from './pages/home/home.component.jsx';
+import ClubLayout from './layouts/club/club.layout.jsx';
+import ClubPageHome from './pages/club/contents/home/home.component.jsx';
+import Scores from './pages/club/contents/scores/scores.component.jsx';
 
 const App = () => {
   return (
-    <Router>
-      <PageWrapper>
-        <GlobalStyles />
-        <Header />
-        <ClubPage />
-        <Footer />
-      </PageWrapper>
-    </Router>
+    <PageWrapper>
+      <GlobalStyles />
+      <MainLayout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/club">
+            <ClubLayout>
+              <Switch>
+                <Route exact path="/club" component={ClubPageHome} />
+                <Route exact path="/club/Scores" component={Scores} />
+              </Switch>
+            </ClubLayout>
+          </Route>
+        </Switch>
+      </MainLayout>
+    </PageWrapper>
   );
 };
 

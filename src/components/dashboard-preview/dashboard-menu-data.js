@@ -6,14 +6,14 @@ import { ReactComponent as MenuIcon } from '../../assets/images/svg/__menu.svg';
 const menuData = [
   {
     id: 1,
-    href: '/',
+    href: '/club',
     title: 'داشبورد',
     icon: <MenuIcon />,
     fill: 'primary',
   },
   {
     id: 2,
-    href: '/',
+    href: '/club/scores',
     title: 'نمودار امتیازات',
     icon: <ChartIcon />,
     fill: 'onSurface',

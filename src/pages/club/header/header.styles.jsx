@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const Container = styled.div`
+export const Container = styled.header`
   display: flex;
   gap: ${({ theme }) => theme.pxToRem(24)};
   padding: ${({ theme }) => theme.pxToRem(16)};

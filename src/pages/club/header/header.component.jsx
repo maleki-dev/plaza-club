@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './club-header.styles';
+import * as S from './header.styles';
 import NavItem from '../../../components/nav-item/nav-item.component';
 import { ReactComponent as ClubIcon } from '../../../assets/images/svg/__club.svg';
 
@@ -7,22 +7,22 @@ const clubHeaderNavData = [
   {
     id: 1,
     text: 'درباره باشگاه',
-    href: '/',
+    href: '/club/about',
   },
   {
     id: 2,
     text: 'همکاران',
-    href: '/',
+    href: '/club/coleages',
   },
   {
     id: 3,
     text: 'جوایز',
-    href: '/',
+    href: '/club/gifts',
   },
   {
     id: 4,
     text: 'شرایط و قوانین باشگاه',
-    href: '/',
+    href: '/club/rules',
   },
 ];
 
@@ -30,7 +30,7 @@ const ClubHeader = () => {
   return (
     <S.Container>
       <S.Logo>
-        <NavItem to="/" $larg={true} before={<ClubIcon />}>
+        <NavItem to="/club" $larg={true} before={<ClubIcon />}>
           باشگاه مشتریان
         </NavItem>
       </S.Logo>
@@ -39,7 +39,6 @@ const ClubHeader = () => {
           {item.text}
         </NavItem>
       ))}
-      <NavItem to="/">درباره باشگاه</NavItem>
     </S.Container>
   );
 };

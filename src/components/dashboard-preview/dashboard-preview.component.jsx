@@ -9,22 +9,24 @@ import menuData from './dashboard-menu-data';
 
 const UserDashboard = () => {
   return (
-    <Widget>
-      <DashboardHeader />
-      <S.Content>
-        {menuData.map(menuItem => (
-          <NavItem
-            key={menuItem.id}
-            to={menuItem.href}
-            color={menuItem.fill}
-            before={menuItem.icon}
-          >
-            {menuItem.title}
-          </NavItem>
-        ))}
-      </S.Content>
-      <DashboardFooter />
-    </Widget>
+    <S.Container>
+      <Widget>
+        <DashboardHeader />
+        <S.Content>
+          {menuData.map(menuItem => (
+            <NavItem
+              key={menuItem.id}
+              to={menuItem.href}
+              color={menuItem.fill}
+              before={menuItem.icon}
+            >
+              {menuItem.title}
+            </NavItem>
+          ))}
+        </S.Content>
+        <DashboardFooter />
+      </Widget>
+    </S.Container>
   );
 };
 

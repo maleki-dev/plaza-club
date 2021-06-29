@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: inline-flex;
@@ -6,5 +6,5 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.pxToRem(32)};
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   border: ${({ theme }) => theme.border.solidStroke};
-  flex-basis: 23.5%;
+  width: 100%;
 `;

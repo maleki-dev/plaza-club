@@ -1,22 +1,22 @@
 export const headerData = [
   {
-    href: '/',
+    href: '/plaza-plus',
     text: 'پلازا پلاس',
   },
   {
-    href: '/',
+    href: '/club',
     text: 'باشگاه مشتریان',
   },
   {
-    href: '/',
+    href: '/mag',
     text: 'پلازا مگ',
   },
   {
-    href: '/',
+    href: '/FAQ',
     text: 'سوالات متداول',
   },
   {
-    href: '/',
+    href: '/brands',
     text: 'برندها',
   },
 ];

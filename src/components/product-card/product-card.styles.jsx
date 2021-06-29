@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const ProductImage = styled.div`
   padding: ${({ theme }) => theme.pxToRem('0 46')};
@@ -17,7 +17,7 @@ export const Image = styled.img`
   height: 100%;
 `;
 
-export const ProductName = styled.p`
+export const ProductName = styled.div`
   margin: ${({ theme }) => theme.pxToRem('24 0')};
   max-height: ${({ theme }) => theme.pxToRem('42')};
   flex-grow: 1;
@@ -37,6 +37,7 @@ export const Details = styled.div`
 export const PriceContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 `;
 
 export const PriceOld = styled.del`

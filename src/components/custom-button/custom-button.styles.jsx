@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 const smallButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('4 8')};
-  font: ${({ theme }) => theme.fonts.smNormal};
+  font: ${({ theme }) => theme.fonts.xsNormal};
 `;
 
 const mediumButtonProperties = css`

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, Header, Footer } from './widget-box.styles';
-import Widget from '../../../components/widget/widget.component';
-import CustomButton from '../../../components/custom-button/custom-button.component';
+import Widget from '../../../../components/widget/widget.component';
+import CustomButton from '../../../../components/custom-button/custom-button.component';
 
 const WidgetBox = () => {
   return (
     <Container>
       <Widget>
         <Header>ارتقا به سطح نقره ای</Header>
-        فقط 22،560 امتیاز دیگه تا رسیدن به سطح نقره ای و کلی جوایز و تخفیف های ویژه
+        فقط 22،560 امتیاز دیگه تا رسیدن به سطح نقره ای و کلی تخفیف ویژه
         <Footer>
           <CustomButton $color="primary" $size="small" to="/">
             افزایش سطح

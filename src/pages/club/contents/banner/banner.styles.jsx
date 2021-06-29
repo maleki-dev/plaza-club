@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import banner from '../../assets/images/banner.png';
+import styled from 'styled-components/macro';
+import banner from '../../../../assets/images/banner.png';
 
 export const Container = styled.div`
   background-image: url(${banner});
-  flex-basis: 49%;
+  flex-basis: 65%;
+  flex-grow: 1;
   display: flex;
   width: 100%;
   background-size: cover;

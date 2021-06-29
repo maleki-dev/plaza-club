@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.pxToRem(32)};
-  flex-basis: 23.5%;
+  flex-basis: 31.5%;
 `;
 
 export const Header = styled.div`
