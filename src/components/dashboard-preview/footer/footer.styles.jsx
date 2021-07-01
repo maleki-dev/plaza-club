@@ -6,7 +6,7 @@ export const Footer = styled.div`
   //padding: ${({ theme }) => theme.pxToRem('0 32 16')};
 `;
 
-export const PointsRange = styled.div`
+export const ScoresRange = styled.div`
   margin: ${({ theme }) => theme.pxToRem('8 0')};
   display: flex;
   width: 100%;
@@ -28,18 +28,18 @@ export const PointsRange = styled.div`
   }
 `;
 
-export const PointsContainer = styled.div`
+export const ScoresContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 `;
 
-export const MaxPoint = styled.span`
+export const MaxScore = styled.span`
   color: ${({ theme }) => theme.color.subtitle};
 `;
 
-export const UserPoint = styled.span`
+export const UserScore = styled.span`
   color: ${({ theme }) => theme.color.primary};
   font: ${({ theme }) => theme.fonts.bigBold};
 `;

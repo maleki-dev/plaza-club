@@ -5,9 +5,13 @@ import CustomButton from '../custom-button/custom-button.component';
 import HeaderNav from '../header-nav/header-nav.component';
 import { ReactComponent as UserIcon } from '../../assets/images/svg/__user.svg';
 import { ReactComponent as CartIcon } from '../../assets/images/svg/__cart.svg';
-
 import logo from '../../assets/images/logo.png';
 import * as S from './header.styles';
+import { userData } from '../../global-data';
+import levelAssesment from '../../helpers/levelAssesment';
+
+const { score } = userData;
+const { color } = levelAssesment(score);
 
 const Header = () => {
   const cartButtonProps = {
@@ -15,7 +19,7 @@ const Header = () => {
     $size: 'medium',
   };
   const userButtonProps = {
-    $color: 'success',
+    $color: color,
     $size: 'medium',
     $fill: 'background',
   };

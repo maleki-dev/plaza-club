@@ -31,11 +31,16 @@ const border = {
   solidPrimaryThick: '4px solid ' + color.primary,
 };
 
+const boxShadow = {
+  insetStroke: 'inset 0 0 0.5px 0.5px ' + color.stroke,
+};
+
 const theme = {
   htmlFontSize: 16,
   color,
   fonts,
   border,
+  boxShadow,
 
   pxToRem(input) {
     const reference = this.htmlFontSize;

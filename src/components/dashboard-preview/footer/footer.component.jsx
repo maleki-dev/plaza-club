@@ -1,24 +1,25 @@
 import React from 'react';
 import * as S from './footer.styles';
-import { userData, levelsData } from '../../../global-data';
+import { userData } from '../../../global-data';
+import levelAssesment from '../../../helpers/levelAssesment';
 
-const { level, point } = userData;
-const { maxPoint } = levelsData[level];
+const { score } = userData;
+const { maxScore } = levelAssesment(score);
 
 const DashboardFooter = () => {
   return (
     <S.Footer>
-      <S.PointsRange width={(point * 100) / maxPoint}>
-        <span>{maxPoint.toLocaleString()}</span>
+      <S.ScoresRange width={(score * 100) / maxScore}>
+        <span>{maxScore.toLocaleString()}</span>
         <span>0</span>
-      </S.PointsRange>
-      <S.PointsContainer>
+      </S.ScoresRange>
+      <S.ScoresContainer>
         <span>امتیاز شما: </span>
         <div>
-          <S.MaxPoint>{maxPoint.toLocaleString() + ' / '}</S.MaxPoint>
-          <S.UserPoint>{point.toLocaleString()}</S.UserPoint>
+          <S.MaxScore>{maxScore.toLocaleString() + ' / '}</S.MaxScore>
+          <S.UserScore>{score.toLocaleString()}</S.UserScore>
         </div>
-      </S.PointsContainer>
+      </S.ScoresContainer>
     </S.Footer>
   );
 };

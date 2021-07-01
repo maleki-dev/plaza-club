@@ -2,9 +2,11 @@ import React from 'react';
 import * as S from './header.styles';
 import CustomButton from '../../custom-button/custom-button.component';
 import { ReactComponent as UserIcon } from '../../../assets/images/svg/__user.svg';
-import { userData, levelsData } from '../../../global-data';
-const { level, name } = userData;
-const { color, levelName } = levelsData[level];
+import { userData } from '../../../global-data';
+import levelAssesment from '../../../helpers/levelAssesment';
+
+const { name, score } = userData;
+const { color, levelName } = levelAssesment(score);
 
 const DashboardHeader = () => {
   return (
