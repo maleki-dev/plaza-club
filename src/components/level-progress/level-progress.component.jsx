@@ -25,12 +25,14 @@ const calcWidth = () => {
 
 const LevelProgress = () => {
   const levelRef = useRef(null);
-  const contRef = useRef(null);
   const [tooltipLeft, setTooltipLeft] = useState(0);
 
   useEffect(() => {
-    setTooltipLeft((levelRef.current.offsetWidth * 100) / contRef.current.offsetWidth);
-  }, []);
+    const getLeft = () =>
+      setTooltipLeft(levelRef ? levelRef.current.getBoundingClientRect().width : 0);
+    window.addEventListener('resize', getLeft);
+    getLeft();
+  }, [levelRef]);
 
   return (
     <S.Container>
@@ -43,7 +45,7 @@ const LevelProgress = () => {
             <S.Badge right="14">{green.maxScore.toLocaleString()}</S.Badge>
           </S.StripBadges>
           <Tooltip direction="up" left={tooltipLeft} text={score.toLocaleString()}>
-            <S.MainStrip ref={contRef}>
+            <S.MainStrip>
               <S.BaseGreenStrip>
                 <S.GreenStrip
                   width={calcWidth().greenWidth}

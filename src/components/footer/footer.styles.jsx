@@ -34,8 +34,7 @@ export const FooterNav = styled.div`
   }
 `;
 
-export const FooterNavTitle = styled.h3`
-  font: ${({ theme }) => theme.fonts.lgBold};
+export const FooterNavTitle = styled.h4`
   border-right: ${({ theme }) => theme.border.solidPrimaryThick};
   padding-right: ${({ theme }) => theme.pxToRem(8)};
   margin-bottom: ${({ theme }) => theme.pxToRem(16)};

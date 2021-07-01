@@ -8,7 +8,7 @@ export const SearchContentContainer = styled.div`
   box-shadow: ${({ theme }) => theme.pxToRem('0 3 3 0') + theme.color.stroke};
 `;
 
-export const SearchContentHeader = styled.h3`
+export const SearchContentHeader = styled.h4`
   margin: ${({ theme }) => theme.pxToRem('4 0')};
   padding: ${({ theme }) => theme.pxToRem('8 16')};
 `;

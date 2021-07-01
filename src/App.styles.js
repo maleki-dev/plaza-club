@@ -23,6 +23,26 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         color: ${({ theme }) => theme.color.onSurface};
     }
+
+    h1 {
+        font: ${({ theme }) => theme.fonts.xxBigBold};
+    }
+
+    h2 {
+        font: ${({ theme }) => theme.fonts.xBigBold};
+    }
+
+    h3 {
+        font: ${({ theme }) => theme.fonts.bigBold};
+    }
+
+    h4 {
+        font: ${({ theme }) => theme.fonts.lgBold};
+    }
+
+    h5 {
+        font: ${({ theme }) => theme.fonts.mdBold};
+    }
 `;
 
 export default GlobalStyles;

@@ -18,8 +18,7 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.pxToRem('-8 0 32')};
 `;
 
-export const Title = styled.h3`
-  font: ${({ theme }) => theme.fonts.lgBold};
+export const Title = styled.h4`
   margin-bottom: ${({ theme }) => theme.pxToRem(40)}; ;
 `;
 

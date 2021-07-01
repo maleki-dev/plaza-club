@@ -4,23 +4,25 @@ import NavItem from '../nav-item/nav-item.component';
 import Widget from '../widget/widget.component';
 import DashboardHeader from './header/header.component';
 import DashboardFooter from './footer/footer.component';
+import { withRouter } from 'react-router-dom';
 
 import menuData from './dashboard-menu-data';
 
-const UserDashboard = () => {
+const UserDashboard = ({ location }) => {
+  const currentPath = location.pathname;
   return (
     <S.Container>
       <Widget>
         <DashboardHeader />
         <S.Content>
-          {menuData.map(menuItem => (
+          {menuData.map(({ id, href, icon, title }) => (
             <NavItem
-              key={menuItem.id}
-              to={menuItem.href}
-              color={menuItem.fill}
-              before={menuItem.icon}
+              key={id}
+              to={href}
+              color={currentPath === href ? 'primary' : 'onSurface'}
+              before={icon}
             >
-              {menuItem.title}
+              {title}
             </NavItem>
           ))}
         </S.Content>
@@ -30,4 +32,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default withRouter(UserDashboard);

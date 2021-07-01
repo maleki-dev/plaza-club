@@ -30,11 +30,10 @@ export const HeadingInner = styled.div`
   flex-direction: column;
 `;
 
-export const HeadingTitle = styled.h1`
-  font: ${({ theme }) => theme.fonts.xBigBold};
+export const HeadingTitle = styled.h2`
   margin-bottom: ${({ theme }) => theme.pxToRem(8)};
 `;
 
-export const HeadingSubtitle = styled.h3`
+export const HeadingSubtitle = styled.p`
   font: ${({ theme }) => theme.fonts.mdNormal};
 `;

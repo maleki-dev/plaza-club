@@ -23,7 +23,7 @@ export const Tooltip = styled.span`
   border-radius: ${({ theme }) => theme.pxToRem(5)};
   border: ${({ theme }) => theme.border.solidStroke};
   background-color: ${({ theme }) => theme.color.background};
-  left: ${props => props.left + '%'};
+  left: ${props => props.left + 'px'};
 
   &:before {
     position: absolute;

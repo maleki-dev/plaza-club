@@ -31,5 +31,5 @@ export const levelsData = {
 
 export const userData = {
   name: 'سجاد ملکی',
-  score: 4000,
+  score: 40000,
 };

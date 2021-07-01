@@ -9,28 +9,24 @@ const menuData = [
     href: '/club',
     title: 'داشبورد',
     icon: <MenuIcon />,
-    fill: 'primary',
   },
   {
     id: 2,
     href: '/club/scores',
     title: 'نمودار امتیازات',
     icon: <ChartIcon />,
-    fill: 'onSurface',
   },
   {
     id: 3,
     href: '/',
     title: 'تاریخچه امتیازات',
     icon: <HistoryIcon />,
-    fill: 'onSurface',
   },
   {
     id: 4,
     href: '/',
     title: 'مشاهده هم خرید ها',
     icon: <UserIcon />,
-    fill: 'onSurface',
   },
 ];
 

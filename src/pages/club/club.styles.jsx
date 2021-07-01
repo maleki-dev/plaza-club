@@ -13,6 +13,7 @@ export const Container = styled.div`
 
 export const Content = styled.main`
   flex-basis: 74.5%;
+  margin-bottom: ${({ theme }) => theme.pxToRem(32)}; ;
 `;
 
 export const RowTitle = styled.p`
@@ -27,6 +28,10 @@ export const Row = styled.div`
 
   div {
     flex-basis: 31.5%;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 `;
 
