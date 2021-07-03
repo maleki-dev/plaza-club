@@ -6,7 +6,7 @@ import DashboardHeader from './header/header.component';
 import DashboardFooter from './footer/footer.component';
 import { withRouter } from 'react-router-dom';
 
-import menuData from './dashboard-menu-data';
+import { menuData } from '../../data';
 
 const UserDashboard = ({ location }) => {
   const currentPath = location.pathname;

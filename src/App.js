@@ -6,8 +6,8 @@ import MainLayout from './layouts/main/main.layout.jsx';
 import PageWrapper from './components/page-wrapper/page-wrapper.component';
 import Home from './pages/home/home.component.jsx';
 import ClubLayout from './layouts/club/club.layout.jsx';
-import ClubPageHome from './pages/club/contents/home/home.component.jsx';
-import Scores from './pages/club/contents/scores/scores.component.jsx';
+import ClubPageHome from './pages/club/home/home.component.jsx';
+import Scores from './pages/club/scores/scores.component.jsx';
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/macro';
-import { levelsData } from '../../global-data';
+import { levelsData } from '../../data';
 import { forwardRef } from 'react';
 
 const ForwardRefComponent = forwardRef((props, ref) => <div {...props} ref={ref} />);

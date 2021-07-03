@@ -1,4 +1,4 @@
-import { levelsData } from '../global-data';
+import { levelsData } from '../data';
 
 const { green, silver, gold, diamond } = levelsData;
 

@@ -7,7 +7,7 @@ import { ReactComponent as UserIcon } from '../../assets/images/svg/__user.svg';
 import { ReactComponent as CartIcon } from '../../assets/images/svg/__cart.svg';
 import logo from '../../assets/images/logo.png';
 import * as S from './header.styles';
-import { userData } from '../../global-data';
+import { userData } from '../../data';
 import levelAssesment from '../../helpers/levelAssesment';
 
 const { score } = userData;

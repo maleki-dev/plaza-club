@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Widget from '../widget/widget.component';
 import * as S from './level-progress.styles';
-import { userData, levelsData } from '../../global-data';
+import { userData, levelsData } from '../../data';
 import levelAssesment from '../../helpers/levelAssesment';
 import { ReactComponent as Diamond } from '../../assets/images/svg/diamond.svg';
 import Tooltip from '../tooltip/tooltip.component';

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './footer.styles';
-import { userData } from '../../../global-data';
+import { userData } from '../../../data';
 import levelAssesment from '../../../helpers/levelAssesment';
 
 const { score } = userData;
