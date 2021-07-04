@@ -8,6 +8,7 @@ import Home from './pages/home/home.component.jsx';
 import ClubLayout from './layouts/club/club.layout.jsx';
 import ClubPageHome from './pages/club/home/home.component.jsx';
 import Scores from './pages/club/scores/scores.component.jsx';
+import History from './pages/club/history/history.component.jsx';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Switch>
                 <Route exact path="/club" component={ClubPageHome} />
                 <Route exact path="/club/scores" component={Scores} />
+                <Route exact path="/club/history" component={History} />
               </Switch>
             </ClubLayout>
           </Route>

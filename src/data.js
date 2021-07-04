@@ -147,13 +147,13 @@ export const menuData = [
   },
   {
     id: 3,
-    href: '/',
+    href: '/club/history',
     title: 'تاریخچه امتیازات',
     icon: <HistoryIcon />,
   },
   {
     id: 4,
-    href: '/',
+    href: '/club/teammates',
     title: 'مشاهده هم خرید ها',
     icon: <UserIcon />,
   },
