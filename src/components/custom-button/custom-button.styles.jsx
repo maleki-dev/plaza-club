@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components/macro';
 
+const deactiveStyles = css`
+  cursor: default;
+  opacity: 0.32;
+`;
+
 const smallButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('4 8')};
   font: ${({ theme }) => theme.fonts.xsNormal};
@@ -31,6 +36,7 @@ export const ButtonContainer = styled.button`
     $color === 'background' ? theme.color.onSurface : theme.color.background};
   background-color: ${({ theme, $color }) => theme.color[$color]};
   ${getButtonSizeStyles}
+  ${props => (props.$deactive ? deactiveStyles : null)};
 `;
 
 export const ButtonInner = styled.div`

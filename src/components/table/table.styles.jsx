@@ -52,4 +52,8 @@ export const Foot = styled.div`
 
 export const Row = styled.div`
   display: table-row;
+
+  &:last-of-type ${Cell} {
+    border-bottom: none;
+  }
 `;

@@ -28,8 +28,7 @@ const LevelProgress = () => {
   const [tooltipLeft, setTooltipLeft] = useState(0);
 
   useEffect(() => {
-    const getLeft = () =>
-      setTooltipLeft(levelRef ? levelRef.current.getBoundingClientRect().width : 0);
+    const getLeft = () => setTooltipLeft(levelRef?.current?.getBoundingClientRect().width || 0);
     window.addEventListener('resize', getLeft);
     getLeft();
   }, [levelRef]);

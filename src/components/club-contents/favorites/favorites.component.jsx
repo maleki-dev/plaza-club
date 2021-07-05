@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductCard from '../../../../components/product-card/product-card.component';
-import { RowTitle, Row } from '../../club.styles';
-import { productData } from '../../../../data';
+import ProductCard from '../../product-card/product-card.component';
+import { RowTitle, Row } from '../../../pages/club/club.styles';
+import { productData } from '../../../data';
 
 const Favorites = () => {
   return (

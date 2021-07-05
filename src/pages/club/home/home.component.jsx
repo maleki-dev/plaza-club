@@ -1,7 +1,7 @@
 import React from 'react';
-import Banner from '../contents/banner/banner.component';
-import WidgetBox from '../contents/widget-box/widget-box.component';
-import Favorites from '../contents/favorites/favorites.component.jsx';
+import Banner from '../../../components/club-contents/banner/banner.component';
+import WidgetBox from '../../../components/club-contents/widget-box/widget-box.component';
+import Favorites from '../../../components/club-contents/favorites/favorites.component.jsx';
 
 import { OfferBox } from '../club.styles';
 

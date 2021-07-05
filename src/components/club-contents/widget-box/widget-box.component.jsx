@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Header, Footer } from './widget-box.styles';
-import Widget from '../../../../components/widget/widget.component';
-import CustomButton from '../../../../components/custom-button/custom-button.component';
+import Widget from '../../widget/widget.component';
+import CustomButton from '../../custom-button/custom-button.component';
 
 const WidgetBox = () => {
   return (

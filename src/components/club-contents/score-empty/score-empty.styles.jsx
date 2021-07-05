@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import back from '../../../../assets/images/__graphics.png';
+import back from '../../../assets/images/__graphics.png';
 
 export const Container = styled.div`
   display: flex;

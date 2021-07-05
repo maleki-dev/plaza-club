@@ -126,19 +126,19 @@ export const footerData = {
   enamadData: [
     {
       id: 1,
-      imageUrl: './images/enamad.png',
+      imageUrl: '/images/enamad.png',
       href: '#',
       alt: 'enamad',
     },
     {
       id: 2,
-      imageUrl: './images/etehadie.png',
+      imageUrl: '/images/etehadie.png',
       href: '#',
       alt: 'enamad',
     },
     {
       id: 3,
-      imageUrl: './images/samandehi.png',
+      imageUrl: '/images/samandehi.png',
       href: '#',
       alt: 'enamad',
     },
@@ -146,7 +146,7 @@ export const footerData = {
 
   details: {
     title: {
-      imageUrl: './images/logo.png',
+      imageUrl: '/images/logo.png',
       href: '/',
       alt: 'logo',
     },
@@ -157,17 +157,17 @@ export const footerData = {
   storeData: [
     {
       id: 'bazaar',
-      imageUrl: './images/bazaar.png',
+      imageUrl: '/images/bazaar.png',
       href: '/',
     },
     {
       id: 'play-store',
-      imageUrl: './images/google-play.png',
+      imageUrl: '/images/google-play.png',
       href: '/',
     },
     {
       id: 'apple-store',
-      imageUrl: './images/apple-store.png',
+      imageUrl: '/images/apple-store.png',
       href: '/',
     },
   ],

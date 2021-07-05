@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../../../../components/custom-button/custom-button.component';
+import CustomButton from '../../custom-button/custom-button.component';
 import * as S from './score-empty.styles';
 
 const ScoreEmpty = () => {

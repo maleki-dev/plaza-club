@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './header.styles';
-import NavItem from '../../../../components/nav-item/nav-item.component';
-import { ReactComponent as ClubIcon } from '../../../../assets/images/svg/__club.svg';
+import NavItem from '../../nav-item/nav-item.component';
+import { ReactComponent as ClubIcon } from '../../../assets/images/svg/__club.svg';
 
 const clubHeaderNavData = [
   {

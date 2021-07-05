@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './scores.styles';
 import LevelProgress from '../../../components/level-progress/level-progress.component';
-import ScoringBox from '../contents/scoring-box/scoring-box.component';
+import ScoringBox from '../../../components/club-contents/scoring-box/scoring-box.component';
 import { scoringData } from '../../../data';
 
 const Scores = () => {

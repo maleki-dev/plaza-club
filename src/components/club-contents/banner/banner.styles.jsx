@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import banner from '../../../../assets/images/banner.png';
+import banner from '../../../assets/images/banner.png';
 
 export const Container = styled.div`
   background-image: url(${banner});

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './banner.styles';
-import clubLogo from '../../../../assets/images/club.png';
+import clubLogo from '../../../assets/images/club.png';
 
 const Banner = () => {
   return (

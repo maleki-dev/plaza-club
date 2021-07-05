@@ -1,10 +1,9 @@
 import React from 'react';
 import * as S from './history.styles';
-import ScoreTable from '../contents/score-table/score-table.component';
-import ScoreEmpty from '../contents/score-empty/score-empty.component';
+import ScoreTable from '../../../components/club-contents/score-table/score-table.component';
+import ScoreEmpty from '../../../components/club-contents/score-empty/score-empty.component';
 import data from './history.data';
 
-console.info(data.find(item => item.id));
 const History = () => {
   return (
     <S.Container>
