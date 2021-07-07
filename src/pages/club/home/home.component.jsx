@@ -4,13 +4,14 @@ import WidgetBox from '../../../components/club-contents/widget-box/widget-box.c
 import Favorites from '../../../components/club-contents/favorites/favorites.component.jsx';
 
 import { OfferBox } from '../club.styles';
+import { widgetBoxData } from './home.data';
 
 const ClubPageHome = () => {
   return (
     <>
       <OfferBox>
         <Banner />
-        <WidgetBox />
+        <WidgetBox data={widgetBoxData} />
       </OfferBox>
       <Favorites />
     </>

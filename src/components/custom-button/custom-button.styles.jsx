@@ -5,6 +5,12 @@ const deactiveStyles = css`
   opacity: 0.32;
 `;
 
+const linkStyles = css`
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.onSurface};
+  border: none;
+`;
+
 const smallButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('4 8')};
   font: ${({ theme }) => theme.fonts.xsNormal};
@@ -37,6 +43,7 @@ export const ButtonContainer = styled.button`
   background-color: ${({ theme, $color }) => theme.color[$color]};
   ${getButtonSizeStyles}
   ${props => (props.$deactive ? deactiveStyles : null)};
+  ${props => (props.$link ? linkStyles : null)};
 `;
 
 export const ButtonInner = styled.div`

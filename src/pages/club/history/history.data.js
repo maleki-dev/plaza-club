@@ -66,7 +66,35 @@ const actions = {
   },
 };
 
-const data = [
+export const tableHeadData = [
+  {
+    id: 1,
+    span: 1,
+    title: 'امتیاز',
+  },
+  {
+    id: 2,
+    span: 2.3,
+    title: 'عنوان امتیاز',
+  },
+  {
+    id: 3,
+    span: 1.7,
+    title: 'امتیاز تشویقی',
+  },
+  {
+    id: 4,
+    span: 3,
+    title: 'وضعیت',
+  },
+  {
+    id: 5,
+    span: 2,
+    title: '',
+  },
+];
+
+export const historyData = [
   {
     id: 1,
     ...actions.profileCompletion,
@@ -348,4 +376,3 @@ const data = [
     },
   },
 ];
-export default data;

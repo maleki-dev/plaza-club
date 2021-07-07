@@ -2,28 +2,31 @@ import React from 'react';
 import { Container, Header, Footer } from './widget-box.styles';
 import Widget from '../../widget/widget.component';
 import CustomButton from '../../custom-button/custom-button.component';
+import useModal from '../../../helpers/useModal.hook';
+import Modal from '../../modal/modal.component';
 
-const WidgetBox = () => {
+const WidgetBox = ({ data }) => {
+  const [isShowing, toggle] = useModal();
+
   return (
-    <Container>
-      <Widget>
-        <Header>ارتقا به سطح نقره ای</Header>
-        فقط 22،560 امتیاز دیگه تا رسیدن به سطح نقره ای و کلی تخفیف ویژه
-        <Footer>
-          <CustomButton $color="primary" $size="small" to="/">
-            افزایش سطح
-          </CustomButton>
-        </Footer>
-      </Widget>
-      <Widget>
-        <Header>هم خرید بیشتر، تخفیف بیشتر!</Header>
-        هر چقدر هم خریدات بیشتر باشن سریعتر ارتقا سطح پیدا میکنی
-        <Footer>
-          <CustomButton $color="secondary" $size="small" to="/">
-            افزودن هم خرید جدید
-          </CustomButton>
-        </Footer>
-      </Widget>
+    <Container $dir={data.direction}>
+      {data.widgets.map(({ id, header, body, footer }) => (
+        <Widget key={id}>
+          <Header>{header}</Header>
+          {body}
+          <Footer>
+            <CustomButton
+              $color={footer.color}
+              $size="small"
+              to="/"
+              onClick={footer.modal ? toggle : null}
+            >
+              {footer.text}
+            </CustomButton>
+          </Footer>
+          {footer.modal ? <Modal isShowing={isShowing}>{footer.modal(toggle)}</Modal> : null}
+        </Widget>
+      ))}
     </Container>
   );
 };

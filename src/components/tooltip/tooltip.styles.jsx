@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 const upStyles = css`
   bottom: calc(100% + 10px);

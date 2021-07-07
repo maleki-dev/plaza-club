@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './footer.styles';
 import { userData } from '../../../data';
-import levelAssesment from '../../../helpers/levelAssesment';
+import levelAssesment from '../../../utils/levelAssesment';
 
 const { score } = userData;
 const { maxScore } = levelAssesment(score);
