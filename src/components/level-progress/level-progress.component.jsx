@@ -1,16 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Widget from '../widget/widget.component';
 import * as S from './level-progress.styles';
-import { userData, levelsData } from '../../data';
+import { levelsData } from '../../data';
 import levelAssesment from '../../utils/levelAssesment';
 import { ReactComponent as Diamond } from '../../assets/images/svg/diamond.svg';
 import Tooltip from '../tooltip/tooltip.component';
+import { useSelector } from 'react-redux';
 
 const { green, silver, gold } = levelsData;
-const { score } = userData;
-const level = levelAssesment(score).levelId;
 
-const calcWidth = () => {
+const calcWidth = (level, score) => {
   const greenWidth = level === 'green' ? (score * 100) / green.maxScore : 100;
   const silverWidth =
     level === 'silver'
@@ -26,6 +25,9 @@ const calcWidth = () => {
 const LevelProgress = () => {
   const levelRef = useRef(null);
   const [tooltipLeft, setTooltipLeft] = useState(0);
+  const { score } = useSelector(state => state.user.currentUser);
+  const level = levelAssesment(score).levelId;
+  const width = calcWidth(level, score);
 
   useEffect(() => {
     const getLeft = () => setTooltipLeft(levelRef?.current?.getBoundingClientRect().width || 0);
@@ -46,22 +48,16 @@ const LevelProgress = () => {
           <Tooltip direction="up" left={tooltipLeft} text={score.toLocaleString()}>
             <S.MainStrip>
               <S.BaseGreenStrip>
-                <S.GreenStrip
-                  width={calcWidth().greenWidth}
-                  ref={level === 'green' ? levelRef : null}
-                />
+                <S.GreenStrip width={width.greenWidth} ref={level === 'green' ? levelRef : null} />
               </S.BaseGreenStrip>
               <S.BaseSilverStrip>
                 <S.SilverStrip
-                  width={calcWidth().silverWidth}
+                  width={width.silverWidth}
                   ref={level === 'silver' ? levelRef : null}
                 />
               </S.BaseSilverStrip>
               <S.BaseGoldStrip>
-                <S.GoldStrip
-                  width={calcWidth().goldWidth}
-                  ref={level === 'gold' ? levelRef : null}
-                />
+                <S.GoldStrip width={width.goldWidth} ref={level === 'gold' ? levelRef : null} />
               </S.BaseGoldStrip>
               {level === 'diamond' ? <S.DiamondStrip ref={levelRef} /> : null}
             </S.MainStrip>

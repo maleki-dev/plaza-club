@@ -40,11 +40,6 @@ export const levelsData = {
   },
 };
 
-export const userData = {
-  name: 'سجاد ملکی',
-  score: 40000,
-};
-
 export const scoringData = [
   {
     id: 1,

@@ -34,3 +34,7 @@ export const HeaderBottom = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.pxToRem('0 16 16')};
 `;
+
+export const HeaderLogin = styled.span`
+  padding-left: ${({ theme }) => theme.pxToRem(8)};
+`;

@@ -48,5 +48,7 @@ export const ButtonContainer = styled.button`
 
 export const ButtonInner = styled.div`
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
   ${props => (props.$fill ? 'fill: ' + props.theme.color[props.$fill] : null)}
 `;
