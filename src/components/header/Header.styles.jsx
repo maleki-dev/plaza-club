@@ -5,17 +5,24 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: ${({ theme }) => theme.pxToRem(110)};
+  max-height: ${({ theme }) => theme.pxToRem(110)};
   position: sticky;
   top: 0;
   z-index: 90;
   background-color: ${({ theme }) => theme.color.background};
-  border-bottom: 1px solid ${({ theme }) => theme.color.stroke}; ;
+  border-bottom: ${({ theme }) => theme.border.solidStroke};
+  transition: 0.3s;
+  margin-bottom: ${props => (props.$hideBottomNav ? props.theme.pxToRem(36) : 0)};
 `;
 
 export const HeaderTop = styled.div`
   display: flex;
   padding: ${({ theme }) => theme.pxToRem(16)};
+  background-color: ${({ theme }) => theme.color.background};
+  position: relative;
+  z-index: 200;
+  transition: 0.3s;
+  margin-bottom: ${props => (props.$hideBottomNav ? props.theme.pxToRem(-36) : 0)};
 `;
 
 export const Logo = styled(Link)`
@@ -28,11 +35,6 @@ export const HeaderButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: ${({ theme }) => theme.pxToRem(16)};
-`;
-
-export const HeaderBottom = styled.div`
-  width: 100%;
-  padding: ${({ theme }) => theme.pxToRem('0 16 16')};
 `;
 
 export const HeaderLogin = styled.span`

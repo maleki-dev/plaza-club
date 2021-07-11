@@ -4,7 +4,6 @@ export const Container = styled.header`
   display: flex;
   gap: ${({ theme }) => theme.pxToRem(24)};
   padding: ${({ theme }) => theme.pxToRem(16)};
-  border-bottom: ${({ theme }) => theme.border.solidStroke};
 `;
 
 export const Logo = styled.div`

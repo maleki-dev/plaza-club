@@ -11,6 +11,10 @@ export const Container = styled.div`
   align-items: flex-start;
 `;
 
+export const Header = styled.div`
+  border-bottom: ${({ theme }) => theme.border.solidStroke};
+`;
+
 export const Content = styled.main`
   flex-basis: 74.5%;
   margin-bottom: ${({ theme }) => theme.pxToRem(32)}; ;
@@ -32,6 +36,14 @@ export const Row = styled.div`
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 1270px) {
+    flex-wrap: wrap;
+
+    div {
+      flex-basis: 48%;
+    }
   }
 `;
 

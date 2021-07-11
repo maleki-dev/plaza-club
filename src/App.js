@@ -17,7 +17,7 @@ import Page404 from './pages/page404/page404.component';
 
 const App = props => {
   const currentUser = useSelector(state => state.user.currentUser);
-  console.log(props);
+
   return (
     <PageWrapper>
       <GlobalStyles />

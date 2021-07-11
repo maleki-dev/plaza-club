@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../redux/user/user.actions';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import Wrapper from '../../components/wrapper/wrapper.component';
 
 const Home = ({ history }) => {
   const dispatch = useDispatch();
@@ -20,19 +21,21 @@ const Home = ({ history }) => {
   };
 
   return (
-    <S.Container>
-      <S.Heading>صفحه اصلی</S.Heading>
-      <S.Goto to="/club"> {'-->'} باشگاه مشتریان</S.Goto>
-      {currentUser ? (
-        <CustomButton $size="medium" $color="secondary" onClick={logoutClickHandler}>
-          خروج
-        </CustomButton>
-      ) : (
-        <CustomButton $size="medium" $color="secondary" onClick={loginClickHandler}>
-          ورود
-        </CustomButton>
-      )}
-    </S.Container>
+    <Wrapper>
+      <S.Container>
+        <S.Heading>صفحه اصلی</S.Heading>
+        <S.Goto to="/club"> {'-->'} باشگاه مشتریان</S.Goto>
+        {currentUser ? (
+          <CustomButton $size="medium" $color="secondary" onClick={logoutClickHandler}>
+            خروج
+          </CustomButton>
+        ) : (
+          <CustomButton $size="medium" $color="secondary" onClick={loginClickHandler}>
+            ورود
+          </CustomButton>
+        )}
+      </S.Container>
+    </Wrapper>
   );
 };
 export default withRouter(Home);

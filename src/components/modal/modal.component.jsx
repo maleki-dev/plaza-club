@@ -4,7 +4,6 @@ import { ModalWrapper, ModalBox } from './modal.styles.jsx';
 
 const modalRoot = document.getElementById('modal-root');
 // const scrollBarWidth = String(window.innerWidth - document.documentElement.clientWidth);
-// console.table([scrollBarWidth, window.innerWidth, document.documentElement.clientWidth]);
 const Modal = ({ isShowing, children }) => {
   useEffect(() => {
     const scrollBarWidth = String(window.innerWidth - document.documentElement.clientWidth);

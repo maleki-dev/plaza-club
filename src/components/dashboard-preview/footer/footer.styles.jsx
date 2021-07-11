@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const Footer = styled.div`
   display: flex;
   flex-direction: column;
-  //padding: ${({ theme }) => theme.pxToRem('0 32 16')};
+  margin-bottom: ${({ theme }) => theme.pxToRem(-16)};
 `;
 
 export const ScoresRange = styled.div`

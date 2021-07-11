@@ -9,6 +9,7 @@ export const Container = styled.div`
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: ${({ theme }) => theme.pxToRem(392)};
   padding: ${({ theme }) => theme.pxToRem('60 50 40')};
 `;
 
