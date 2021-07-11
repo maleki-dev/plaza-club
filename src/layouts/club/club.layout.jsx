@@ -8,7 +8,6 @@ import withUser from '../../hoc/withUser.component';
 
 const ClubLayout = props => {
   const currentUser = useSelector(state => state.user.currentUser);
-  console.log(props);
   return (
     <S.ClubPageContainer>
       <S.Header>

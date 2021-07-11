@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as S from './search-box.styles';
 import { ReactComponent as SearchIcon } from '../../assets/images/svg/__search.svg';
 import SearchContent from '../search-content/search-content.component';
+import useClickInside from '../../helpers/useClickInside.hook';
+import useClickOutside from '../../helpers/useClickOutside.hook';
 
 const searchInputProps = {
   type: 'text',
@@ -12,27 +14,12 @@ const SearchBox = () => {
   const [searchBoxHidden, setSearchBoxHidden] = useState(true);
   const clickRef = useRef(null);
 
-  useEffect(() => {
-    console.log('search-box');
-    const handleWindowClick = e => {
-      clickRef.current.contains(e.target) ? setSearchBoxHidden(false) : setSearchBoxHidden(true);
-    };
-    if (!searchBoxHidden) {
-      window.addEventListener('click', handleWindowClick);
-    } else if (searchBoxHidden) {
-      window.removeEventListener('click', handleWindowClick);
-    }
-    return () => window.removeEventListener('click', handleWindowClick);
-  }, [searchBoxHidden]);
+  useClickInside(clickRef, () => setSearchBoxHidden(false));
+  useClickOutside(clickRef, () => setSearchBoxHidden(true));
 
   return (
     <S.SearchBoxContainer>
-      <S.SearchBox
-        ref={clickRef}
-        onClick={() => {
-          setSearchBoxHidden(false);
-        }}
-      >
+      <S.SearchBox ref={clickRef}>
         <S.SearchInput {...searchInputProps} />
         <S.SearchButton>
           <SearchIcon />

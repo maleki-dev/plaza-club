@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import SearchBox from '../search-box/search-box.component';
 import CustomButton from '../custom-button/custom-button.component';
 import HeaderNav from '../header-nav/header-nav.component';
@@ -9,6 +9,10 @@ import * as S from './header.styles';
 import Wrapper from '../wrapper/wrapper.component';
 import levelAssesment from '../../utils/levelAssesment';
 import withUser from '../../hoc/withUser.component';
+import DropDown from '../dropdown/dropdown.component';
+import useClickInside from '../../helpers/useClickInside.hook';
+import useClickOutside from '../../helpers/useClickOutside.hook';
+import useScroll from '../../helpers/useScroll.hook';
 
 const Header = ({ currentUser }) => {
   const cartButtonProps = {
@@ -37,18 +41,25 @@ const Header = ({ currentUser }) => {
   }
 
   const [hideBottomNav, setHideBottomNav] = useState(false);
-  const [scroll, setScroll] = useState(0);
+  useScroll(setHideBottomNav);
 
-  const scrollHandler = useCallback(() => {
-    let currentScroll = document.documentElement.scrollTop;
-    setHideBottomNav(scroll < currentScroll);
-    setScroll(currentScroll);
-  }, [scroll]);
+  const [dropdown, setDropdown] = useState({
+    userButton: false,
+  });
 
-  useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
-  }, [scrollHandler]);
+  const dropDownRef = useRef();
+
+  useClickInside(dropDownRef, () =>
+    setDropdown({
+      userButton: !dropdown.userButton,
+    }),
+  );
+
+  useClickOutside(dropDownRef, () =>
+    setDropdown({
+      userButton: false,
+    }),
+  );
 
   return (
     <S.Header $hideBottomNav={hideBottomNav}>
@@ -62,9 +73,10 @@ const Header = ({ currentUser }) => {
             <CustomButton {...cartButtonProps}>
               <CartIcon />
             </CustomButton>
-            <CustomButton {...userButtonProps}>
+            <CustomButton {...userButtonProps} ref={dropDownRef}>
               {currentUser ? null : <S.HeaderLogin> وارد شوید </S.HeaderLogin>}
               <UserIcon />
+              <DropDown $show={dropdown.userButton}>this is dropdown</DropDown>
             </CustomButton>
           </S.HeaderButtonsContainer>
         </S.HeaderTop>

@@ -36,6 +36,7 @@ const getButtonSizeStyles = props => {
 export const ButtonContainer = styled.button`
   display: flex;
   cursor: pointer;
+  position: relative;
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   border: ${({ theme, $color }) => ($color === 'background' ? theme.border.solidStroke : 'none')};
   color: ${({ theme, $color }) =>
