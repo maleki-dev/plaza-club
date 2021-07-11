@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import GlobalStyles from './App.styles';
 import PageWrapper from './components/page-wrapper/page-wrapper.component';
 import Home from './pages/home/home.component';
@@ -14,10 +13,9 @@ import Teammates from './pages/club/teammates/teammates.component';
 import SignIn from './pages/auth/sign-in/sign-in.component';
 import SignUp from './pages/auth/sign-up/sign-up.component';
 import Page404 from './pages/page404/page404.component';
+import withUser from './hoc/withUser.component';
 
-const App = props => {
-  const currentUser = useSelector(state => state.user.currentUser);
-
+const App = ({ currentUser }) => {
   return (
     <PageWrapper>
       <GlobalStyles />
@@ -66,4 +64,4 @@ const App = props => {
   );
 };
 
-export default App;
+export default withUser(App);

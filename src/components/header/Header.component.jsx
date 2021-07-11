@@ -8,11 +8,9 @@ import logo from '../../assets/images/logo.png';
 import * as S from './header.styles';
 import Wrapper from '../wrapper/wrapper.component';
 import levelAssesment from '../../utils/levelAssesment';
-import { useSelector } from 'react-redux';
+import withUser from '../../hoc/withUser.component';
 
-const Header = () => {
-  const currentUser = useSelector(state => state.user.currentUser);
-
+const Header = ({ currentUser }) => {
   const cartButtonProps = {
     $color: 'background',
     $size: 'medium',
@@ -76,4 +74,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withUser(Header);

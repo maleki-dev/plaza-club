@@ -4,9 +4,11 @@ import UserDashboard from '../../components/dashboard-preview/dashboard-preview.
 import * as S from '../../pages/club/club.styles';
 import { useSelector } from 'react-redux';
 import Wrapper from '../../components/wrapper/wrapper.component';
+import withUser from '../../hoc/withUser.component';
 
-const ClubLayout = ({ children }) => {
+const ClubLayout = props => {
   const currentUser = useSelector(state => state.user.currentUser);
+  console.log(props);
   return (
     <S.ClubPageContainer>
       <S.Header>
@@ -19,7 +21,7 @@ const ClubLayout = ({ children }) => {
           {currentUser ? (
             <>
               <UserDashboard />
-              <S.Content>{children}</S.Content>
+              <S.Content>{props.children}</S.Content>
             </>
           ) : (
             <p>برای استفاده از خدمات باشگاه مشتریان باید وارد شوید...</p>
@@ -30,4 +32,4 @@ const ClubLayout = ({ children }) => {
   );
 };
 
-export default ClubLayout;
+export default withUser(ClubLayout);

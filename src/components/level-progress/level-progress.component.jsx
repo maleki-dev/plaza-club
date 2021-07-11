@@ -5,7 +5,7 @@ import { levelsData } from '../../data';
 import levelAssesment from '../../utils/levelAssesment';
 import { ReactComponent as Diamond } from '../../assets/images/svg/diamond.svg';
 import Tooltip from '../tooltip/tooltip.component';
-import { useSelector } from 'react-redux';
+import withUser from '../../hoc/withUser.component';
 
 const { green, silver, gold } = levelsData;
 
@@ -22,10 +22,10 @@ const calcWidth = (level, score) => {
   return { greenWidth, silverWidth, goldWidth };
 };
 
-const LevelProgress = () => {
+const LevelProgress = ({ currentUser }) => {
   const levelRef = useRef(null);
   const [tooltipLeft, setTooltipLeft] = useState(0);
-  const { score } = useSelector(state => state.user.currentUser);
+  const { score } = currentUser;
   const level = levelAssesment(score).levelId;
   const width = calcWidth(level, score);
 
@@ -33,6 +33,7 @@ const LevelProgress = () => {
     const getLeft = () => setTooltipLeft(levelRef?.current?.getBoundingClientRect().width || 0);
     window.addEventListener('resize', getLeft);
     getLeft();
+    console.log('level-progress');
   }, [levelRef]);
 
   return (
@@ -75,4 +76,4 @@ const LevelProgress = () => {
   );
 };
 
-export default LevelProgress;
+export default withUser(LevelProgress);

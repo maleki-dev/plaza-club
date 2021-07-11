@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './footer.styles';
 import levelAssesment from '../../../utils/levelAssesment';
-import { useSelector } from 'react-redux';
+import withUser from '../../../hoc/withUser.component';
 
-const DashboardFooter = () => {
-  const score = useSelector(state => state.user.currentUser.score);
+const DashboardFooter = ({ currentUser }) => {
+  const { score } = currentUser;
   const { maxScore } = levelAssesment(score);
   return (
     <S.Footer>
@@ -23,4 +23,4 @@ const DashboardFooter = () => {
   );
 };
 
-export default DashboardFooter;
+export default withUser(DashboardFooter);

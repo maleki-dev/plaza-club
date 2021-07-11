@@ -13,6 +13,7 @@ const SearchBox = () => {
   const clickRef = useRef(null);
 
   useEffect(() => {
+    console.log('search-box');
     const handleWindowClick = e => {
       clickRef.current.contains(e.target) ? setSearchBoxHidden(false) : setSearchBoxHidden(true);
     };

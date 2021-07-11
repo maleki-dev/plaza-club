@@ -3,10 +3,10 @@ import * as S from './header.styles';
 import CustomButton from '../../custom-button/custom-button.component';
 import { ReactComponent as UserIcon } from '../../../assets/images/svg/__user.svg';
 import levelAssesment from '../../../utils/levelAssesment';
-import { useSelector } from 'react-redux';
+import withUser from '../../../hoc/withUser.component';
 
-const DashboardHeader = () => {
-  const { displayName, score } = useSelector(state => state.user.currentUser);
+const DashboardHeader = ({ currentUser }) => {
+  const { displayName, score } = currentUser;
   const { color, levelName } = levelAssesment(score);
   return (
     <S.Header>
@@ -27,4 +27,4 @@ const DashboardHeader = () => {
   );
 };
 
-export default DashboardHeader;
+export default withUser(DashboardHeader);
