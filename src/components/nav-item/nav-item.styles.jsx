@@ -24,10 +24,23 @@ export const After = styled.span`
   ${suedoStyles}
 `;
 
+const hoverBlue = css`
+  color: ${props => props.theme.color.secondary};
+
+  svg {
+    fill: ${props => props.theme.color.secondary};
+  }
+`;
+
 export const NavItemContainer = styled(Link)`
   font: ${props => props.theme.fonts[props.$font || 'mdNormal']};
   color: ${props => getItemColor(props)};
   text-decoration: none;
   display: flex;
   align-items: center;
+  transition: color 0.3s;
+
+  &:hover {
+    ${props => (props.$hoverBlue ? hoverBlue : null)}
+  }
 `;

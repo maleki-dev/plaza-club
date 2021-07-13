@@ -37,6 +37,7 @@ const Navbar = () => {
                   <S.Title>
                     <NavItem
                       $font="mdBold"
+                      $hoverBlue={true}
                       after={<Arrow direction="left" fill="unselected" />}
                       to={navGroupe.url}
                     >
@@ -47,6 +48,7 @@ const Navbar = () => {
                     <S.Item key={index}>
                       <NavItem
                         $font="smNormal"
+                        $hoverBlue={true}
                         to={nav.url}
                         before={<Arrow direction="left" fill="unselected" />}
                       >

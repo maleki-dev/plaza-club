@@ -19,7 +19,7 @@ export const ArrowContainer = styled.span`
   width: ${({ theme }) => theme.pxToRem(8)};
   height: ${({ theme }) => theme.pxToRem(8)};
   display: flex;
-  transition: transform 0.3s;
+  transition: 0.3s;
 
   ${getDirection}
 `;

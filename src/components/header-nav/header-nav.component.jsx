@@ -8,19 +8,29 @@ import { headerData } from './header-data';
 
 const HeaderNav = () => {
   const [show, setShow] = useState(false);
+  const timeoutRef = useRef();
 
   const handleMouseOver = () => {
-    setShow(true);
+    const mouseOver = setTimeout(() => {
+      setShow(true);
+      clearTimeout(mouseOver);
+      timeoutRef.current = null;
+    }, 500);
+    timeoutRef.current = mouseOver;
   };
 
   const handleMouseLeave = () => {
-    setShow(false);
+    const mouseLeave = setTimeout(() => {
+      if (timeoutRef.current) return;
+      setShow(false);
+      clearTimeout(mouseLeave);
+    }, 500);
   };
 
   return (
     <>
       <S.MenuButton onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-        <NavItem notlink={true} $gap="8" after={<Arrow direction={show ? 'up' : null} />}>
+        <NavItem notlink={true} after={<Arrow direction={show ? 'up' : null} />}>
           محصولات
         </NavItem>
         {show ? <Navbar /> : null}
