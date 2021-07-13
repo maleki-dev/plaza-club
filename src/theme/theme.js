@@ -7,28 +7,35 @@ const color = {
   subtitle: '#757280',
   unselected: '#bbbac0',
   stroke: '#d8d8d8',
-  strokeVarient: '#f3f3f3',
+  strokeVariant: '#f3f3f3',
   surface: '#f7f7f7',
   background: '#ffffff',
+  newBackground: '#f5f9fe',
+  newBackgroundVariant: '#deedff',
+  placeholder: '#a2bad5',
 };
 
+const fontFamily = 'IranYekan';
+
 const fonts = {
-  xxBigBold: 'bold 40px/53px Shabnam',
-  xBigBold: 'bold 32px/43px Shabnam',
-  bigBold: 'bold 24px/32px Shabnam',
-  lgBold: 'bold 18px/24px Shabnam',
-  mdBold: 'bold 16px/21px Shabnam',
-  mdNormal: 'normal 16px/21px Shabnam',
-  smNormal: 'normal 14px/19px Shabnam',
-  smNormalHighLine: 'normal 14px/24px Shabnam',
-  xsNormal: 'normal 12px/16px Shabnam',
-  xxsNormal: 'normal 10px/14px Shabnam',
+  xxBigBold: `bold 40px/53px ${fontFamily}`,
+  xBigBold: `bold 32px/43px ${fontFamily}`,
+  bigBold: `bold 24px/32px ${fontFamily}`,
+  lgBold: `bold 18px/24px ${fontFamily}`,
+  mdBold: `bold 16px/21px ${fontFamily}`,
+  mdNormal: `normal 16px/21px ${fontFamily}`,
+  smNormal: `normal 14px/19px ${fontFamily}`,
+  smNormalHighLine: `normal 14px/24px ${fontFamily}`,
+  xsNormal: `normal 12px/16px ${fontFamily}`,
+  xxsNormal: `normal 10px/14px ${fontFamily}`,
 };
 
 const border = {
   solidStroke: '1px solid ' + color.stroke,
-  solidStrokeVarient: '1px solid ' + color.strokeVarient,
+  solidStrokeVariant: '1px solid ' + color.strokeVariant,
   solidPrimaryThick: '4px solid ' + color.primary,
+  solidPrimaryMedium: '2px solid ' + color.primary,
+  solidNewBackgroundMedium: '2px solid ' + color.newBackground,
   dashedStroke: '1px dashed ' + color.stroke,
 };
 

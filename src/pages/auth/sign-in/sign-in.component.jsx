@@ -36,7 +36,6 @@ const SignIn = ({ history }) => {
   };
 
   useEffect(() => {
-    console.log('sign-in-useeffect');
     if (userData.id) {
       dispatch(userLogin(userData));
       history.push('/');

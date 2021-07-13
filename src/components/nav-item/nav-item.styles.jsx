@@ -1,12 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
-const transitionOpacity = css`
-  transition: opacity 0.3s;
-`;
-
-const beforeStyles = css`
-  margin-left: ${({ theme }) => theme.pxToRem(16)};
+const suedoStyles = css`
   fill: ${({ theme, fill }) => theme.color[fill]};
   display: inline-flex;
 `;
@@ -19,51 +14,20 @@ const getItemColor = props => {
   return props.theme.color.onSurface;
 };
 
-export const NavItemBefore = styled.span`
-  opacity: 0;
-  margin-left: ${({ theme }) => theme.pxToRem(4)};
-  ${transitionOpacity}
-`;
-
-export const NavItemAfter = styled.span`
-  opacity: 1;
-  margin-right: ${({ theme }) => theme.pxToRem(4)};
-  ${transitionOpacity}
-`;
-
-const hoverStyles = css`
-  display: inline-flex;
-  transform: translateX(${({ theme }) => theme.pxToRem(20)});
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: translateX(0);
-
-    ${NavItemBefore} {
-      opacity: 1;
-    }
-
-    ${NavItemAfter} {
-      opacity: 0;
-    }
-  }
-`;
-
-const getHoverStyles = props => {
-  if (props.hovereffect) return hoverStyles;
-  return null;
-};
-
 export const Before = styled.span`
-  ${props => (props.before ? beforeStyles : null)};
+  margin-left: ${props => props.theme.pxToRem(props.$gap || 8)};
+  ${suedoStyles}
+`;
+
+export const After = styled.span`
+  margin-right: ${props => props.theme.pxToRem(props.$gap || 8)};
+  ${suedoStyles}
 `;
 
 export const NavItemContainer = styled(Link)`
-  font: ${props => props.theme.fonts[props.$larg ? 'lgBold' : 'mdNormal']};
+  font: ${props => props.theme.fonts[props.$font || 'mdNormal']};
   color: ${props => getItemColor(props)};
   text-decoration: none;
   display: flex;
   align-items: center;
-
-  ${getHoverStyles}
 `;

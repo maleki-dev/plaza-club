@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { footerData } from './footer-data';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import * as S from './footer.styles';
 import NavItem from '../nav-item/nav-item.component';
 import SocialIcons from '../social-icons/social-icons.component';
 import Wrapper from '../wrapper/wrapper.component';
+import HoverSliding from '../hover-sliding/hover-sliding.component';
 
 const Footer = () => {
   const { details, topNav, middleNav, enamadData, storeData, copyrightInfo } = footerData;
@@ -27,13 +28,21 @@ const Footer = () => {
               <S.FooterNavTitle>{footerNav.title}</S.FooterNavTitle>
               <S.FooterNavWrapper>
                 {footerNav.items.map(item => {
-                  const itemProps = {
-                    key: item.id,
-                    hovereffect: item.hovereffect ? 'true' : null,
+                  const props = {
                     notlink: item.href ? null : true,
                     to: item.href || null,
                   };
-                  return <NavItem {...itemProps}>{item.text}</NavItem>;
+                  return (
+                    <Fragment key={item.id}>
+                      {item.hovereffect ? (
+                        <HoverSliding>
+                          <NavItem {...props}>{item.text}</NavItem>
+                        </HoverSliding>
+                      ) : (
+                        <NavItem {...props}>{item.text}</NavItem>
+                      )}
+                    </Fragment>
+                  );
                 })}
               </S.FooterNavWrapper>
             </S.FooterNav>

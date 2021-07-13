@@ -15,7 +15,7 @@ export const FooterTop = styled.div`
   padding-bottom: ${({ theme }) => theme.pxToRem(24)};
   display: flex;
   gap: ${({ theme }) => theme.pxToRem(24)};
-  border-bottom: ${({ theme }) => theme.border.solidStrokeVarient};
+  border-bottom: ${({ theme }) => theme.border.solidStrokeVariant};
   margin-bottom: ${({ theme }) => theme.pxToRem(32)};
 `;
 

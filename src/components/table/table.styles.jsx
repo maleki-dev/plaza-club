@@ -13,7 +13,7 @@ export const Cell = styled.div`
   display: table-cell;
   width: ${props => props.$span * 10 + '%'};
   padding: ${({ theme }) => theme.pxToRem('24 16')};
-  border-bottom: ${({ theme }) => theme.border.solidStrokeVarient};
+  border-bottom: ${({ theme }) => theme.border.solidStrokeVariant};
   vertical-align: middle;
 
   &:first-of-type {

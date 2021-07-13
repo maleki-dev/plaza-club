@@ -30,7 +30,7 @@ const ClubHeader = () => {
   return (
     <S.Container>
       <S.Logo>
-        <NavItem to="/club" $larg={true} before={<ClubIcon />}>
+        <NavItem to="/club" $font="mdBold" before={<ClubIcon />}>
           باشگاه مشتریان
         </NavItem>
       </S.Logo>

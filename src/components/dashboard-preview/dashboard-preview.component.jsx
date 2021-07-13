@@ -21,6 +21,7 @@ const UserDashboard = ({ location }) => {
               to={href}
               color={currentPath === href ? 'primary' : 'onSurface'}
               before={icon}
+              $gap="16"
             >
               {title}
             </NavItem>

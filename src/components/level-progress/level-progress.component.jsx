@@ -34,6 +34,7 @@ const LevelProgress = ({ currentUser }) => {
     window.addEventListener('resize', getLeft);
     getLeft();
     console.log('level-progress');
+    return () => window.removeEventListener('resize', getLeft);
   }, [levelRef]);
 
   return (

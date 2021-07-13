@@ -4,6 +4,13 @@
     url('assets/fonts/Shabnam.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'IranYekan';
+  src: url('assets/fonts/IRANYekanWebRegular.woff') format('woff'),
+    url('assets/fonts/IRANYekanWebRegular.woff2') format('woff2'),
+    url('assets/fonts/IRANYekanWebRegular.ttf') format('truetype');
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

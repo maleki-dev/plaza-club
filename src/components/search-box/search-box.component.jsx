@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import * as S from './search-box.styles';
 import { ReactComponent as SearchIcon } from '../../assets/images/svg/__search.svg';
 import SearchContent from '../search-content/search-content.component';
