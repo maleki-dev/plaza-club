@@ -10,11 +10,15 @@ import Wrapper from '../wrapper/wrapper.component';
 import levelAssesment from '../../utils/levelAssesment';
 import withUser from '../../hoc/withUser.component';
 import DropDown from '../dropdown/dropdown.component';
+import UserDropdown from '../user-dropdown/user-dropdown.component';
 import useClickInside from '../../helpers/useClickInside.hook';
 import useClickOutside from '../../helpers/useClickOutside.hook';
 import useScroll from '../../helpers/useScroll.hook';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 const Header = ({ currentUser }) => {
+  let color = 'background';
+
   const cartButtonProps = {
     $color: 'background',
     $size: 'medium',
@@ -25,7 +29,7 @@ const Header = ({ currentUser }) => {
   };
 
   if (currentUser) {
-    const { color } = levelAssesment(currentUser.score);
+    color = levelAssesment(currentUser.score).color;
     userButtonProps = {
       ...userButtonProps,
       $color: color,
@@ -43,23 +47,16 @@ const Header = ({ currentUser }) => {
   const [hideBottomNav, setHideBottomNav] = useState(false);
   useScroll(setHideBottomNav);
 
-  const [dropdown, setDropdown] = useState({
-    userButton: false,
-  });
+  const [userDropdown, setUserDropdown] = useState(false);
+  const [cartDropdown, setCartDropdown] = useState(false);
 
-  const dropDownRef = useRef();
+  const userDropDownRef = useRef();
+  const cartDropDownRef = useRef();
 
-  useClickInside(dropDownRef, () =>
-    setDropdown({
-      userButton: !dropdown.userButton,
-    }),
-  );
-
-  useClickOutside(dropDownRef, () =>
-    setDropdown({
-      userButton: false,
-    }),
-  );
+  useClickInside(userDropDownRef, () => setUserDropdown(!userDropdown));
+  useClickOutside(userDropDownRef, () => setUserDropdown(false));
+  useClickInside(cartDropDownRef, () => setCartDropdown(!cartDropdown));
+  useClickOutside(cartDropDownRef, () => setCartDropdown(false));
 
   return (
     <S.Header $hideBottomNav={hideBottomNav}>
@@ -70,13 +67,21 @@ const Header = ({ currentUser }) => {
           </S.Logo>
           <SearchBox />
           <S.HeaderButtonsContainer>
-            <CustomButton {...cartButtonProps}>
+            <CustomButton {...cartButtonProps} ref={cartDropDownRef}>
               <CartIcon />
+              <DropDown $show={cartDropdown}>
+                <CartDropdown />
+              </DropDown>
             </CustomButton>
-            <CustomButton {...userButtonProps} ref={dropDownRef}>
-              {currentUser ? null : <S.HeaderLogin> وارد شوید </S.HeaderLogin>}
+            <CustomButton {...userButtonProps} ref={userDropDownRef}>
+              {currentUser ? (
+                <DropDown $show={userDropdown} $userColor={color}>
+                  <UserDropdown />
+                </DropDown>
+              ) : (
+                <S.HeaderLogin> وارد شوید </S.HeaderLogin>
+              )}
               <UserIcon />
-              <DropDown $show={dropdown.userButton}>this is dropdown</DropDown>
             </CustomButton>
           </S.HeaderButtonsContainer>
         </S.HeaderTop>

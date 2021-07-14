@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import * as S from './header-nav.styles';
 import NavItem from '../nav-item/nav-item.component';
 import Arrow from '../arrow/arrow.component';
@@ -9,14 +9,15 @@ import { headerData } from './header-data';
 const HeaderNav = () => {
   const [show, setShow] = useState(false);
   const timeoutRef = useRef();
+  const delay = 500;
 
-  const handleMouseOver = () => {
-    const mouseOver = setTimeout(() => {
+  const handleMouseEnter = () => {
+    const mouseEnter = setTimeout(() => {
       setShow(true);
-      clearTimeout(mouseOver);
+      clearTimeout(mouseEnter);
       timeoutRef.current = null;
-    }, 500);
-    timeoutRef.current = mouseOver;
+    }, delay);
+    timeoutRef.current = mouseEnter;
   };
 
   const handleMouseLeave = () => {
@@ -24,16 +25,16 @@ const HeaderNav = () => {
       if (timeoutRef.current) return;
       setShow(false);
       clearTimeout(mouseLeave);
-    }, 500);
+    }, delay);
   };
 
   return (
     <>
-      <S.MenuButton onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+      <S.MenuButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <NavItem notlink={true} after={<Arrow direction={show ? 'up' : null} />}>
           محصولات
         </NavItem>
-        {show ? <Navbar /> : null}
+        <Navbar $show={show} />
       </S.MenuButton>
       <S.NavContainer>
         {headerData.map((navItem, navKey) => (

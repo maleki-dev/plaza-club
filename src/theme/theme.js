@@ -1,6 +1,6 @@
 const color = {
   error: '#ff4a6d',
-  success: '#42d9bb',
+  success: '#00B5B5',
   primary: '#f89a01',
   secondary: '#03a9f4',
   onSurface: '#2b273c',
@@ -41,6 +41,7 @@ const border = {
 
 const boxShadow = {
   insetStroke: 'inset 0 0 0.5px 0.5px ' + color.stroke,
+  outsetBlack: '0 0 24px rgba(0, 0, 0, 0.16)',
 };
 
 const theme = {

@@ -5,7 +5,7 @@ import Wrapper from '../wrapper/wrapper.component';
 import NavItem from '../nav-item/nav-item.component';
 import Arrow from '../arrow/arrow.component';
 
-const Navbar = () => {
+const Navbar = ({ $show }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleMouseOver = index => {
@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <S.Container>
+    <S.Container $show={$show}>
       <Wrapper>
         <S.Top>
           {navData.map(({ id, title, ...otherProps }, index) => {

@@ -27,7 +27,7 @@ const SignUp = ({ history }) => {
       email,
       password,
       displayName: 'سجاد ملکی',
-      score: 40000,
+      score: 3579,
     });
 
     emailRef.current.value = '';

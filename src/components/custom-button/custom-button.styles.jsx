@@ -17,12 +17,15 @@ const smallButtonProperties = css`
 `;
 
 const mediumButtonProperties = css`
+  border-radius: ${({ theme }) => theme.pxToRem(16)};
   padding: ${({ theme }) => theme.pxToRem(10)};
   font: ${({ theme }) => theme.fonts.mdNormal};
+  min-width: ${({ theme }) => theme.pxToRem(40)};
 `;
 
 const mediumWideButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('10 16')};
+  border-radius: ${({ theme }) => theme.pxToRem(20)};
   font: ${({ theme }) => theme.fonts.mdNormal};
 `;
 
