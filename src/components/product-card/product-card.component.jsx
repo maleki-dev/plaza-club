@@ -3,7 +3,7 @@ import Widget from '../widget/widget.component';
 import CustomButton from '../custom-button/custom-button.component';
 import * as S from './product-card.styles';
 
-const ProductCard = ({ imageUrl, href, price, name, point }) => {
+const ProductCard = ({ imageUrl, href, price, name, point, clickHandler }) => {
   return (
     <Widget>
       <S.ProductImage>
@@ -16,7 +16,7 @@ const ProductCard = ({ imageUrl, href, price, name, point }) => {
         امتیاز خرید: <span>{point}</span>
       </S.ProductPoint>
       <S.Details>
-        <CustomButton to={href} $color="primary" $size="mediumWide">
+        <CustomButton to={href} $color="primary" $size="mediumWide" onClick={clickHandler}>
           مشاهده
         </CustomButton>
         <S.PriceContainer>

@@ -102,6 +102,7 @@ export const productData = [
     imageUrl: './images/products/__img2.png',
     href: '/',
     point: 250,
+    details: ['مشکی قرمز', ' گارانتی تعویض یک ماهه'],
   },
   {
     id: 3,
@@ -113,6 +114,7 @@ export const productData = [
     imageUrl: './images/products/__img3.png',
     href: '/',
     point: 210,
+    details: ['گارانتی تعویض یک ماهه'],
   },
   {
     id: 4,
@@ -124,6 +126,7 @@ export const productData = [
     imageUrl: './images/products/__img4.png',
     href: '/',
     point: 125,
+    details: ['مشکی قرمز'],
   },
 ];
 
