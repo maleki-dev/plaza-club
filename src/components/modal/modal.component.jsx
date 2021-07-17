@@ -17,8 +17,8 @@ const Modal = ({ isShowing, children }) => {
   }, [isShowing]);
   return isShowing
     ? createPortal(
-        <ModalWrapper className="modal-wrapper">
-          <ModalBox className="modal">{children}</ModalBox>
+        <ModalWrapper>
+          <ModalBox>{children}</ModalBox>
         </ModalWrapper>,
         modalRoot,
       )
@@ -26,16 +26,3 @@ const Modal = ({ isShowing, children }) => {
 };
 
 export default Modal;
-
-// <div className="modal-header">
-// <button
-//   type="button"
-//   className="modal-close-button"
-//   data-dismiss="modal"
-//   aria-label="Close"
-//   onClick={hide}
-// >
-//   <span aria-hidden="true">&times;</span>
-// </button>
-// </div>
-// <p>Hello, I'm a modal.</p>

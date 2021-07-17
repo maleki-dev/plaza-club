@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import SearchBox from '../search-box/search-box.component';
 import CustomButton from '../custom-button/custom-button.component';
 import HeaderNav from '../header-nav/header-nav.component';
@@ -15,8 +15,12 @@ import useClickInside from '../../helpers/useClickInside.hook';
 import useClickOutside from '../../helpers/useClickOutside.hook';
 import useScroll from '../../helpers/useScroll.hook';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { useSelector } from 'react-redux';
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
 const Header = ({ currentUser }) => {
+  const cartItemsCount = useSelector(state => selectCartItemsCount(state));
+
   let color = 'background';
 
   const cartButtonProps = {
@@ -52,11 +56,15 @@ const Header = ({ currentUser }) => {
 
   const userDropDownRef = useRef();
   const cartDropDownRef = useRef();
+  const cartDropDownButtonRef = useRef();
+  const userDropDownButtonRef = useRef();
 
-  useClickInside(userDropDownRef, () => setUserDropdown(!userDropdown));
-  useClickOutside(userDropDownRef, () => setUserDropdown(false));
-  useClickInside(cartDropDownRef, () => setCartDropdown(!cartDropdown));
-  useClickOutside(cartDropDownRef, () => setCartDropdown(false));
+  useClickInside(userDropDownButtonRef, () => setUserDropdown(!userDropdown));
+  useClickOutside(userDropDownButtonRef, () => setUserDropdown(false));
+  useClickInside(userDropDownRef, () => setUserDropdown(true));
+  useClickInside(cartDropDownButtonRef, () => setCartDropdown(!cartDropdown));
+  useClickOutside(cartDropDownButtonRef, () => setCartDropdown(false));
+  useClickInside(cartDropDownRef, () => setCartDropdown(true));
 
   return (
     <S.Header $hideBottomNav={hideBottomNav}>
@@ -67,15 +75,19 @@ const Header = ({ currentUser }) => {
           </S.Logo>
           <SearchBox />
           <S.HeaderButtonsContainer>
-            <CustomButton {...cartButtonProps} ref={cartDropDownRef}>
-              <CartIcon />
-              <DropDown $show={cartDropdown}>
+            <S.HeaderCartButtonContainer>
+              <CustomButton {...cartButtonProps} ref={cartDropDownButtonRef}>
+                {cartItemsCount ? <S.CountItems>{cartItemsCount}</S.CountItems> : null}
+                <CartIcon />
+              </CustomButton>
+              <DropDown $show={cartDropdown} ref={cartDropDownRef}>
                 <CartDropdown />
               </DropDown>
-            </CustomButton>
-            <CustomButton {...userButtonProps} ref={userDropDownRef}>
+            </S.HeaderCartButtonContainer>
+
+            <CustomButton {...userButtonProps} ref={userDropDownButtonRef}>
               {currentUser ? (
-                <DropDown $show={userDropdown} $userColor={color}>
+                <DropDown $show={userDropdown} ref={userDropDownRef} $userColor={color}>
                   <UserDropdown />
                 </DropDown>
               ) : (

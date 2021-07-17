@@ -4,6 +4,7 @@ import NavItem from '../nav-item/nav-item.component';
 import Arrow from '../arrow/arrow.component';
 import Navbar from '../navbar/navbar.component';
 import { headerData } from './header-data';
+import useScroll from '../../helpers/useScroll.hook';
 // import useTimeout from '../../helpers/useTimeout.hook';
 
 const HeaderNav = () => {
@@ -19,6 +20,8 @@ const HeaderNav = () => {
     }, delay);
     timeoutRef.current = mouseEnter;
   };
+
+  useScroll(() => setShow(false));
 
   const handleMouseLeave = () => {
     const mouseLeave = setTimeout(() => {

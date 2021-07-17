@@ -13,18 +13,22 @@ const linkStyles = css`
 
 const smallButtonProperties = css`
   padding: ${({ theme }) => theme.pxToRem('4 8')};
+  padding: ${({ theme, $color }) =>
+    $color === 'background' ? theme.pxToRem('3 8') : theme.pxToRem('4 8')};
   font: ${({ theme }) => theme.fonts.xsNormal};
 `;
 
 const mediumButtonProperties = css`
   border-radius: ${({ theme }) => theme.pxToRem(16)};
-  padding: ${({ theme }) => theme.pxToRem(10)};
+  padding: ${({ theme, $color }) =>
+    $color === 'background' ? theme.pxToRem('9 10') : theme.pxToRem(10)};
   font: ${({ theme }) => theme.fonts.mdNormal};
   min-width: ${({ theme }) => theme.pxToRem(40)};
 `;
 
 const mediumWideButtonProperties = css`
-  padding: ${({ theme }) => theme.pxToRem('10 16')};
+  padding: ${({ theme, $color }) =>
+    $color === 'background' ? theme.pxToRem('9 16') : theme.pxToRem('10 16')};
   border-radius: ${({ theme }) => theme.pxToRem(20)};
   font: ${({ theme }) => theme.fonts.mdNormal};
 `;
@@ -40,6 +44,7 @@ export const ButtonContainer = styled.button`
   display: flex;
   cursor: pointer;
   position: relative;
+  max-height: ${({ theme }) => theme.pxToRem(40)};
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   border: ${({ theme, $color }) => ($color === 'background' ? theme.border.solidStroke : 'none')};
   color: ${({ theme, $color }) =>

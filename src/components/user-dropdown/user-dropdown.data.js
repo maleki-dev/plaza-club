@@ -8,7 +8,7 @@ export const userDropdownData = [
     id: 1,
     title: 'پروفایل',
     icon: <UserIcon />,
-    href: '/club',
+    href: '/',
   },
   {
     id: 2,
