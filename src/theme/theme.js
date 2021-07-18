@@ -13,6 +13,7 @@ const color = {
   newBackground: '#f5f9fe',
   newBackgroundVariant: '#deedff',
   placeholder: '#a2bad5',
+  body: '#f5f9fe',
 };
 
 const fontFamily = 'IranYekan';
@@ -43,6 +44,7 @@ const boxShadow = {
   insetStroke: 'inset 0 0 0.5px 0.5px ' + color.stroke,
   outsetBlack: '0 0 24px rgba(0, 0, 0, 0.16)',
   outsetBlackLight: '0 12px 24px rgba(0, 0, 0, 0.04)',
+  outsetBlackMobile: '0 6px 12px rgba(0, 0, 0, 0.04)',
   outsetBlackLighter: '0 3px 24px rgba(0, 0, 0, 0.06)',
 };
 

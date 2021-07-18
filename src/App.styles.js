@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro';
+import { isMobile } from 'react-device-detect';
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -16,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
 
         color: ${({ theme }) => theme.color.onSurface};
         font: ${({ theme }) => theme.fonts.mdNormal};
+        background-color: ${({ theme }) => theme.color[isMobile ? 'body' : 'backgrund']};
     }
 
     a {

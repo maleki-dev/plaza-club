@@ -10,6 +10,7 @@ import Wrapper from '../wrapper/wrapper.component';
 import levelAssesment from '../../utils/levelAssesment';
 import withUser from '../../hoc/withUser.component';
 import DropDown from '../dropdown/dropdown.component';
+import BadgeInButton from '../badge-in-button/badge-in-button.component';
 import UserDropdown from '../user-dropdown/user-dropdown.component';
 import useClickInside from '../../helpers/useClickInside.hook';
 import useClickOutside from '../../helpers/useClickOutside.hook';
@@ -77,7 +78,7 @@ const Header = ({ currentUser }) => {
           <S.HeaderButtonsContainer>
             <S.HeaderCartButtonContainer>
               <CustomButton {...cartButtonProps} ref={cartDropDownButtonRef}>
-                {cartItemsCount ? <S.CountItems>{cartItemsCount}</S.CountItems> : null}
+                {cartItemsCount ? <BadgeInButton>{cartItemsCount}</BadgeInButton> : null}
                 <CartIcon />
               </CustomButton>
               <DropDown $show={cartDropdown} ref={cartDropDownRef}>
