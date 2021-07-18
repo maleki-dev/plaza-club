@@ -33,19 +33,22 @@ const HeaderNav = () => {
 
   return (
     <>
-      <S.MenuButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <NavItem notlink={true} after={<Arrow direction={show ? 'up' : null} />}>
-          محصولات
-        </NavItem>
-        <Navbar $show={show} />
-      </S.MenuButton>
-      <S.NavContainer>
-        {headerData.map((navItem, navKey) => (
-          <NavItem to={navItem.href} key={navKey}>
-            {navItem.text}
+      <S.BottomNav>
+        <S.MenuButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <NavItem notlink={true} after={<Arrow direction={show ? 'up' : null} />}>
+            محصولات
           </NavItem>
-        ))}
-      </S.NavContainer>
+          <Navbar $show={show} />
+        </S.MenuButton>
+        <S.NavContainer>
+          {headerData.map((navItem, navKey) => (
+            <NavItem to={navItem.href} key={navKey}>
+              {navItem.text}
+            </NavItem>
+          ))}
+        </S.NavContainer>
+      </S.BottomNav>
+      <S.ScreenOverlay $show={show} />
     </>
   );
 };

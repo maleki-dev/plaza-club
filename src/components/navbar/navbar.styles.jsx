@@ -1,14 +1,24 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
+
+const showStyles = css`
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+`;
 
 export const Container = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
-  width: 100%;
-  display: ${({ $show }) => ($show ? 'flex' : 'none')};
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
   flex-direction: column;
+  transition: opacity 0.3s;
   max-height: ${({ theme }) => theme.pxToRem('385')};
   cursor: default;
+
+  ${({ $show }) => ($show ? showStyles : null)};
 `;
 
 export const Top = styled.div`

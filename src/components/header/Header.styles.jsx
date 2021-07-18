@@ -10,7 +10,7 @@ export const Header = styled.header`
   top: 0;
   z-index: 90;
   background-color: ${({ theme }) => theme.color.background};
-  border-bottom: ${({ theme }) => theme.border.solidStroke};
+  box-shadow: ${({ theme }) => theme.boxShadow.outsetBlackLight};
   transition: 0.3s;
   margin-bottom: ${props => (props.$hideBottomNav ? props.theme.pxToRem(36) : 0)};
 `;
@@ -20,6 +20,7 @@ export const HeaderTop = styled.div`
   padding: ${({ theme }) => theme.pxToRem(16)};
   background-color: ${({ theme }) => theme.color.background};
   position: relative;
+  align-items: center;
   z-index: 200;
   transition: 0.3s;
   margin-bottom: ${props => (props.$hideBottomNav ? props.theme.pxToRem(-36) : 0)};

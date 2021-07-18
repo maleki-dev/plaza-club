@@ -42,6 +42,8 @@ const border = {
 const boxShadow = {
   insetStroke: 'inset 0 0 0.5px 0.5px ' + color.stroke,
   outsetBlack: '0 0 24px rgba(0, 0, 0, 0.16)',
+  outsetBlackLight: '0 12px 24px rgba(0, 0, 0, 0.04)',
+  outsetBlackLighter: '0 3px 24px rgba(0, 0, 0, 0.06)',
 };
 
 const theme = {

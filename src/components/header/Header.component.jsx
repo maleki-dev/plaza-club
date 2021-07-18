@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import SearchBox from '../search-box/search-box.component';
 import CustomButton from '../custom-button/custom-button.component';
 import HeaderNav from '../header-nav/header-nav.component';

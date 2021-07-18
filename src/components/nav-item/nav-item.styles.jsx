@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const suedoStyles = css`
   fill: ${({ theme, fill }) => theme.color[fill]};
+  padding: 0 !important;
   display: inline-flex;
 `;
 

@@ -8,15 +8,16 @@ export const SearchBoxContainer = styled.div`
 export const SearchBox = styled.div`
   display: flex;
   position: relative;
-  border-radius: ${({ theme }) => theme.pxToRem(4)};
-  border: ${({ theme }) => theme.border.solidStroke};
-  height: ${({ theme }) => theme.pxToRem(40)};
+  border-radius: ${({ theme }) => theme.pxToRem(24)};
+  background-color: ${({ theme }) => theme.color.newBackground};
+  height: ${({ theme }) => theme.pxToRem(48)};
   max-width: ${({ theme }) => theme.pxToRem(661)};
   padding: ${({ theme }) => theme.pxToRem('10 16')};
   z-index: 100;
 `;
 
 export const SearchInput = styled.input`
+  background-color: ${({ theme }) => theme.color.newBackground};
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   margin-left: ${({ theme }) => theme.pxToRem(16)};
   border: none;
@@ -34,8 +35,13 @@ export const SearchButton = styled.div`
 
 export const SearchBoxContent = styled.div`
   position: absolute;
-  top: calc(100% - ${({ theme }) => theme.pxToRem(5)});
+  top: 0;
   right: 0;
   width: 100%;
   z-index: 99;
+  padding: ${({ theme }) => theme.pxToRem('48 0 24')};
+  background-color: ${({ theme }) => theme.color.background};
+  font: ${({ theme }) => theme.fonts.mdNormal};
+  border-radius: ${({ theme }) => theme.pxToRem(24)};
+  box-shadow: ${({ theme }) => theme.boxShadow.outsetBlackLighter};
 `;
