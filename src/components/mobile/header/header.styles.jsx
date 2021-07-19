@@ -35,3 +35,7 @@ export const HeaderButtonsContainer = styled.div`
 export const HeaderLogin = styled.span`
   padding-left: ${({ theme }) => theme.pxToRem(8)};
 `;
+
+export const SearchBox = styled.div`
+  display: flex;
+`;

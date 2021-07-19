@@ -15,6 +15,7 @@ export const Box = styled.div`
   flex-direction: column;
   border: ${({ theme }) => theme.border.solidStroke};
   border-radius: ${({ theme }) => theme.pxToRem(4)};
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const Head = styled.div`

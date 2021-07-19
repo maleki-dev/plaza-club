@@ -38,6 +38,7 @@ export const NavItemContainer = styled(Link)`
   color: ${props => getItemColor(props)};
   text-decoration: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   transition: color 0.3s;
 

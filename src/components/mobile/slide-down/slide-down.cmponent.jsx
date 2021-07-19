@@ -3,7 +3,7 @@ import NavItem from '../../nav-item/nav-item.component';
 import * as S from './slide-down.styles';
 import Arrow from '../../arrow/arrow.component';
 
-const SlideDown = ({ children, $title }) => {
+const SlideDown = ({ children, $title, ...otherProps }) => {
   const [show, setShow] = useState(false);
 
   const itemProps = {
@@ -16,7 +16,9 @@ const SlideDown = ({ children, $title }) => {
   return (
     <S.Container>
       <NavItem {...itemProps}>{$title}</NavItem>
-      <S.Content $show={show}>{children}</S.Content>
+      <S.DropDown $show={show}>
+        <S.Content {...otherProps}>{children}</S.Content>
+      </S.DropDown>
     </S.Container>
   );
 };

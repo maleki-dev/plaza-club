@@ -38,6 +38,7 @@ const border = {
   solidPrimaryMedium: '2px solid ' + color.primary,
   solidNewBackgroundMedium: '2px solid ' + color.newBackground,
   dashedStroke: '1px dashed ' + color.stroke,
+  dashedUnselectedThick: '4px dashed ' + color.unselected,
 };
 
 const boxShadow = {

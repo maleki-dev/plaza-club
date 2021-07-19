@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import CustomButton from '../../custom-button/custom-button.component';
 import { ReactComponent as UserIcon } from '../../../assets/images/svg/__user.svg';
 import { ReactComponent as CartIcon } from '../../../assets/images/svg/__cart.svg';
@@ -10,13 +10,20 @@ import levelAssesment from '../../../utils/levelAssesment';
 import withUser from '../../../hoc/withUser.component';
 import { useSelector } from 'react-redux';
 import { selectCartItemsCount } from '../../../redux/cart/cart.selectors';
-import SearchBox from '../../search-box/search-box.component';
 import Menu from '../menu/menu.component';
+import SearchInput from '../../search-input/search-input.component';
+import SearchContent from '../search-content/search-content.component';
 
 const Header = ({ currentUser }) => {
   const cartItemsCount = useSelector(state => selectCartItemsCount(state));
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
 
-  let color = 'background';
+  const onOpenMenu = () => setOpenMenu(true);
+  const onCloseMenu = () => setOpenMenu(false);
+
+  const onOpenSearch = () => setOpenSearch(true);
+  const onCloseSearch = () => setOpenSearch(false);
 
   const cartButtonProps = {
     $link: true,
@@ -28,7 +35,7 @@ const Header = ({ currentUser }) => {
   };
 
   if (currentUser) {
-    color = levelAssesment(currentUser.score).color;
+    const color = levelAssesment(currentUser.score).color;
     userButtonProps = {
       ...userButtonProps,
       $color: color,
@@ -46,7 +53,7 @@ const Header = ({ currentUser }) => {
   return (
     <S.Header>
       <S.Row>
-        <S.MenuButton>
+        <S.MenuButton onClick={onOpenMenu}>
           <MenuIcon />
         </S.MenuButton>
         <S.Logo to="/">
@@ -65,9 +72,12 @@ const Header = ({ currentUser }) => {
         </S.HeaderButtonsContainer>
       </S.Row>
       <S.Row>
-        <SearchBox />
+        <S.SearchBox onClick={onOpenSearch}>
+          <SearchInput $hasIcon={true} $noFocus={true} />
+        </S.SearchBox>
+        <SearchContent $open={openSearch} $onClose={onCloseSearch} />
       </S.Row>
-      <Menu />
+      <Menu $open={openMenu} $onClose={onCloseMenu} />
     </S.Header>
   );
 };

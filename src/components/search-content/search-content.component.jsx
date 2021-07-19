@@ -40,8 +40,10 @@ const SearchContent = ({ input }) => {
             <S.NotFound>
               <Alert $type="error">کالایی با عبارت "{input}" پیدا نشد!</Alert>
             </S.NotFound>
-            <S.SearchInfo>از نامهای متداول و مناسب برای جستجو استفاده کنید</S.SearchInfo>
-            <S.SearchInfo>در صورت وجود اشتباه تایپی، عبارت را اصلاح کنید</S.SearchInfo>
+            <S.SearchSuggest>
+              <p>از نامهای متداول و مناسب برای جستجو استفاده کنید</p>
+              <p>در صورت وجود اشتباه تایپی، عبارت را اصلاح کنید</p>
+            </S.SearchSuggest>
           </S.Top>
         </React.Fragment>
       );

@@ -29,11 +29,19 @@ export const NotFound = styled.div`
 
 export const SearchInfo = styled.div`
   display: flex;
-  margin: ${({ theme }) => theme.pxToRem('16 24 0')};
+  flex-wrap: wrap;
+  margin: ${({ theme }) => theme.pxToRem('0 24')};
+`;
+
+export const SearchSuggest = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: ${({ theme }) => theme.pxToRem(16)};
+  padding: ${({ theme }) => theme.pxToRem('0 24')};
+  gap: ${({ theme }) => theme.pxToRem(8)};
 `;
 
 export const MostSearchedItem = styled(NavItem)`
-  :not(:last-of-type) {
-    margin-left: ${({ theme }) => theme.pxToRem(32)};
-  }
+  margin-top: ${({ theme }) => theme.pxToRem(16)};
+  margin-left: ${({ theme }) => theme.pxToRem(32)};
 `;
