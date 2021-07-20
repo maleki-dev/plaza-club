@@ -15,6 +15,34 @@ const Menu = ({ $open, $onClose, currentUser }) => {
   const dispatch = useDispatch();
   const logout = () => dispatch(userLogout());
 
+  const getItems = (item, parentId) => {
+    // console.log(item);
+    return (
+      <React.Fragment>
+        {item.items.map((navItem, index) => (
+          <SlideDown
+            key={navItem.id}
+            $title={navItem.title}
+            $deeper={true}
+            $parentId={parentId}
+            $childIndex={index}
+          >
+            <S.BlueLink to={navItem.url}>{`همه‌ی ${navItem.title}`}</S.BlueLink>
+            {navItem.items.map(subItem => (
+              <React.Fragment key={subItem.id}>
+                {subItem.items ? (
+                  getItems(subItem, navItem.id)
+                ) : (
+                  <Link to={subItem.url}>{subItem.title}</Link>
+                )}
+              </React.Fragment>
+            ))}
+          </SlideDown>
+        ))}
+      </React.Fragment>
+    );
+  };
+
   return (
     <S.Container $open={$open}>
       <S.ButtonsContainer>
@@ -47,20 +75,9 @@ const Menu = ({ $open, $onClose, currentUser }) => {
       <S.NavContainer>
         {navData.map(({ id, items, title }) => (
           <S.NavItem key={id}>
-            <SlideDown $title={title}>
+            <SlideDown $title={title} $parentId={id}>
               <S.BlueLink to="/"> {`همه‌ی ${title}`}</S.BlueLink>
-              {items.map(({ items }) =>
-                items.map((navItem, id) => (
-                  <SlideDown key={id} $title={navItem.title} $deeper={true}>
-                    <S.BlueLink to={navItem.url}>{`همه‌ی ${navItem.title}`}</S.BlueLink>
-                    {navItem.items.map((subItem, id) => (
-                      <Link key={id} to={subItem.url}>
-                        {subItem.title}
-                      </Link>
-                    ))}
-                  </SlideDown>
-                )),
-              )}
+              {items.map(item => getItems(item, id))}
             </SlideDown>
           </S.NavItem>
         ))}

@@ -23,6 +23,7 @@ export const Container = styled.div`
 
 export const Top = styled.div`
   display: flex;
+  flex-wrap: wrap;
   background-color: ${({ theme }) => theme.color.newBackground};
 `;
 

@@ -160,48 +160,58 @@ export const menuData = [
 export const navData = [
   {
     id: 1,
-    // $active: true,
     title: 'کالای دیجیتال',
     items: [
       {
+        id: 11,
         items: [
           {
+            id: 111,
             title: 'لوازم جانبی موبایل و تبلت',
             url: '/search/category-accessories',
             items: [
               {
+                id: 1111,
                 title: 'پاور بانک',
                 url: '/search/category-power-bank',
               },
               {
+                id: 1112,
                 title: 'کیف و کاور',
                 url: '/search/category-cover',
               },
               {
+                id: 1113,
                 title: 'کابل و مبدل',
                 url: '/search/category-cover',
               },
               {
+                id: 1114,
                 title: 'شارژر',
                 url: '/search/category-cover',
               },
               {
+                id: 1115,
                 title: 'محافظ صفحه نمایش',
                 url: '/search/category-cover',
               },
               {
+                id: 1116,
                 title: 'نگهدارنده موبایل',
                 url: '/search/category-cover',
               },
               {
+                id: 1117,
                 title: 'باتری',
                 url: '/search/category-cover',
               },
               {
+                id: 1118,
                 title: 'هندزفری',
                 url: '/search/category-cover',
               },
               {
+                id: 1119,
                 title: 'قاب و شاسی موبایل',
                 url: '/search/category-cover',
               },
@@ -210,36 +220,45 @@ export const navData = [
         ],
       },
       {
+        id: 12,
         items: [
           {
+            id: 121,
             title: 'لوازم جانبی کامپیوتر و لپ تاپ',
             url: '/',
             items: [
               {
+                id: 1211,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 1212,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 1213,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 1214,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 1215,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 1216,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 1217,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -248,28 +267,35 @@ export const navData = [
         ],
       },
       {
+        id: 13,
         items: [
           {
+            id: 131,
             title: 'صوتی و تصویری و لوازم جانبی',
             url: '/',
             items: [
               {
+                id: 1311,
                 title: 'هدفون و هدست',
                 url: '/',
               },
               {
+                id: 1312,
                 title: 'هندزفری',
                 url: '/',
               },
               {
+                id: 1313,
                 title: 'اسپیکر',
                 url: '/',
               },
               {
+                id: 1314,
                 title: 'کابل و مبدل صوتی  و تصویری',
                 url: '/',
               },
               {
+                id: 1315,
                 title: 'محافظ برق چند راهی',
                 url: '/',
               },
@@ -278,46 +304,57 @@ export const navData = [
         ],
       },
       {
+        id: 14,
         items: [
           {
+            id: 141,
             title: 'ذخیره سازی اطلاعات',
             url: '/search/category-accessories',
             items: [
               {
+                id: 1411,
                 title: 'فلش مموری',
                 url: '/search/category-power-bank',
               },
               {
+                id: 1412,
                 title: 'کیف و کاورهارد دیسک اکسترنال',
                 url: '/search/category-cover',
               },
               {
+                id: 1413,
                 title: 'کارت حافظه',
                 url: '/search/category-cover',
               },
               {
+                id: 1414,
                 title: 'کارت خوان',
                 url: '/search/category-cover',
               },
             ],
           },
           {
+            id: 142,
             title: 'بازی و سرگرمی و لوازم جانبی',
             url: '/search/category-accessories',
             items: [
               {
+                id: 1421,
                 title: 'دسته بازی',
                 url: '/search/category-power-bank',
               },
               {
+                id: 1422,
                 title: 'ماوس گیمینگ',
                 url: '/search/category-cover',
               },
               {
+                id: 1423,
                 title: 'کنسول بازی',
                 url: '/search/category-cover',
               },
               {
+                id: 1424,
                 title: 'هدست گیمینگ',
                 url: '/search/category-cover',
               },
@@ -326,16 +363,20 @@ export const navData = [
         ],
       },
       {
+        id: 15,
         items: [
           {
+            id: 151,
             title: 'گجت دیجیتال',
             url: '/',
             items: [
               {
+                id: 1511,
                 title: 'هدست واقعیت مجازی',
                 url: '/',
               },
               {
+                id: 1512,
                 title: 'مچ بند هوشمند',
                 url: '/',
               },
@@ -350,36 +391,45 @@ export const navData = [
     title: 'لوازم و تجهیزات',
     items: [
       {
+        id: 21,
         items: [
           {
+            id: 211,
             title: 'لوازم و تجهیزات',
             url: '/',
             items: [
               {
+                id: 2111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 2112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 2113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 2114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 2115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 2116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 2117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -394,36 +444,45 @@ export const navData = [
     title: 'هنر، فیلم و موسیقی',
     items: [
       {
+        id: 31,
         items: [
           {
+            id: 311,
             title: 'هنر، فیلم و موسیقی',
             url: '/',
             items: [
               {
+                id: 3111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 3112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 3113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 3114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 3115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 3116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 3117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -438,36 +497,45 @@ export const navData = [
     title: 'وسایل نقلیه',
     items: [
       {
+        id: 41,
         items: [
           {
+            id: 411,
             title: 'وسایل نقلیه',
             url: '/',
             items: [
               {
+                id: 4111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 4112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 4113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 4114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 4115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 4116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 4117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -482,36 +550,45 @@ export const navData = [
     title: 'کودک و نوزاد',
     items: [
       {
+        id: 61,
         items: [
           {
+            id: 611,
             title: 'کودک و نوزاد',
             url: '/',
             items: [
               {
+                id: 6111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 6112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 6113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 6114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 6115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 6116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 6117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -526,36 +603,45 @@ export const navData = [
     title: 'آرایشی و بهداشتی',
     items: [
       {
+        id: 71,
         items: [
           {
+            id: 711,
             title: 'آرایشی و بهداشتی',
             url: '/',
             items: [
               {
+                id: 7111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 7112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 7113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 7114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 7115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 7116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 7117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -570,36 +656,45 @@ export const navData = [
     title: 'کتاب و نرم افزار',
     items: [
       {
+        id: 81,
         items: [
           {
+            id: 811,
             title: 'کتاب و نرم افزار',
             url: '/',
             items: [
               {
+                id: 8111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 8112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 8113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 8114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 8115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 8116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 8117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -614,36 +709,45 @@ export const navData = [
     title: 'مد و پوشاک',
     items: [
       {
+        id: 91,
         items: [
           {
+            id: 911,
             title: 'مد و پوشاک',
             url: '/',
             items: [
               {
+                id: 9111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 9112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 9113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 9114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 9115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 9116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 9117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -654,40 +758,49 @@ export const navData = [
     ],
   },
   {
-    id: 10,
+    id: '10',
     title: 'خانه و آشپزخانه',
     items: [
       {
+        id: '101',
         items: [
           {
+            id: '1011',
             title: 'خانه و آشپزخانه',
             url: '/',
             items: [
               {
+                id: 10111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 10112,
                 title: 'موس',
                 url: 'کابل و مبدل کامپیوتر',
               },
               {
+                id: 10113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 10114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 10115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 10116,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 10117,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },
@@ -698,40 +811,49 @@ export const navData = [
     ],
   },
   {
-    id: 11,
+    id: '11',
     title: 'بازی و سرگرمی',
     items: [
       {
+        id: '111',
         items: [
           {
+            id: '1111',
             title: 'بازی و سرگرمی',
             url: '/',
             items: [
               {
+                id: 11111,
                 title: 'کیبورد',
                 url: '/',
               },
               {
+                id: 11112,
                 title: 'موس',
                 url: '/',
               },
               {
+                id: 11113,
                 title: 'کابل و مبدل کامپیوتر',
                 url: '/',
               },
               {
+                id: 11114,
                 title: 'هاب USB',
                 url: '/',
               },
               {
+                id: 11115,
                 title: 'اسپیکر رومیزی',
                 url: '/',
               },
               {
+                id: 11117,
                 title: 'ماوس پد',
                 url: '/',
               },
               {
+                id: 11118,
                 title: 'پایه خنک کننده لپ تاپ',
                 url: '/',
               },

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import MenuProvider from '../../../providers/menu.provider';
 
 export const Container = styled.div`
   position: fixed;
@@ -71,7 +72,7 @@ export const UserBigIcon = styled.div`
     $color === 'background' ? theme.border.dashedUnselectedThick : 'none'};
 `;
 
-export const NavContainer = styled.div`
+export const NavContainer = styled(MenuProvider)`
   margin: ${({ theme }) => theme.pxToRem('24 0')};
   display: flex;
   flex-direction: column;
