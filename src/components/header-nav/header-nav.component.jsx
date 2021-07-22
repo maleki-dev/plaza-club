@@ -1,13 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import * as S from './header-nav.styles';
 import NavItem from '../nav-item/nav-item.component';
 import Arrow from '../arrow/arrow.component';
 import Navbar from '../navbar/navbar.component';
 import { headerData } from './header-data';
 import useScroll from '../../helpers/useScroll.hook';
+import { NavContext } from '../../providers/nav.provider';
 // import useTimeout from '../../helpers/useTimeout.hook';
 
 const HeaderNav = () => {
+  const { showNav, setShowNav } = useContext(NavContext);
   const [show, setShow] = useState(false);
   const timeoutRef = useRef();
   const delay = 500;
@@ -31,14 +33,18 @@ const HeaderNav = () => {
     }, delay);
   };
 
+  useEffect(() => {
+    setShowNav(show);
+  }, [show, setShowNav]);
+
   return (
     <>
       <S.BottomNav>
         <S.MenuButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <NavItem notlink={true} after={<Arrow direction={show ? 'up' : null} />}>
+          <NavItem notlink={true} after={<Arrow direction={showNav ? 'up' : null} />}>
             محصولات
           </NavItem>
-          <Navbar $show={show} />
+          <Navbar $show={showNav} />
         </S.MenuButton>
         <S.NavContainer>
           {headerData.map((navItem, navKey) => (
@@ -48,7 +54,6 @@ const HeaderNav = () => {
           ))}
         </S.NavContainer>
       </S.BottomNav>
-      <S.ScreenOverlay $show={show} />
     </>
   );
 };

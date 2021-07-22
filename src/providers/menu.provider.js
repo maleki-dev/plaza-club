@@ -9,7 +9,7 @@ export const MenuContext = createContext({
 
 const MenuProvider = ({ children }) => {
   const [parent, setParent] = useState({ parentId: null });
-  const [child, setChild] = useState({ parentId: null, childId: null });
+  const [child, setChild] = useState({ parentId: null, childId: null, deep: null });
 
   return (
     <MenuContext.Provider

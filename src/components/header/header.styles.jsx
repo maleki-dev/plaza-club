@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 export const Header = styled.header`
@@ -44,4 +44,25 @@ export const HeaderCartButtonContainer = styled.div`
 
 export const HeaderLogin = styled.span`
   padding-left: ${({ theme }) => theme.pxToRem(8)};
+`;
+
+const overlayStyles = css`
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
+export const ScreenOverlay = styled.div`
+  position: fixed;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-in-out;
+
+  ${({ $show }) => ($show ? overlayStyles : null)};
 `;

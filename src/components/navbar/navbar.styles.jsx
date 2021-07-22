@@ -17,6 +17,7 @@ export const Container = styled.div`
   transition: opacity 0.3s;
   max-height: ${({ theme }) => theme.pxToRem('385')};
   cursor: default;
+  isolation: isolate;
 
   ${({ $show }) => ($show ? showStyles : null)};
 `;

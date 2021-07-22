@@ -174,11 +174,45 @@ export const navData = [
                 id: 1111,
                 title: 'پاور بانک',
                 url: '/search/category-power-bank',
+                items: [
+                  {
+                    id: 11111,
+                    title: 'پاور بانک',
+                    url: '/search/category-power-bank',
+                  },
+                  {
+                    id: 11112,
+                    title: 'کیف و کاور',
+                    url: '/search/category-cover',
+                  },
+                  {
+                    id: 11113,
+                    title: 'کابل و مبدل',
+                    url: '/search/category-cover',
+                  },
+                ],
               },
               {
                 id: 1112,
                 title: 'کیف و کاور',
                 url: '/search/category-cover',
+                items: [
+                  {
+                    id: 11111,
+                    title: 'پاور بانک',
+                    url: '/search/category-power-bank',
+                  },
+                  {
+                    id: 11112,
+                    title: 'کیف و کاور',
+                    url: '/search/category-cover',
+                  },
+                  {
+                    id: 11113,
+                    title: 'کابل و مبدل',
+                    url: '/search/category-cover',
+                  },
+                ],
               },
               {
                 id: 1113,

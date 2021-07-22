@@ -8,7 +8,6 @@ import Alert from '../alert/alert.component';
 const SearchContent = ({ input }) => {
   if (input) {
     const searchResult = search(navData, input);
-    // console.log({ searchResult, input });
     if (searchResult.length) {
       return (
         <React.Fragment>

@@ -4,42 +4,52 @@ import { ReactComponent as CrossIcon } from '../../../assets/images/svg/cross.sv
 import { ReactComponent as PowerOffIcon } from '../../../assets/images/svg/powerOff.svg';
 import { ReactComponent as UserIcon } from '../../../assets/images/svg/user4x.svg';
 import SlideDown from '../slide-down/slide-down.cmponent';
+import MiniNav from '../mini-nav/mini-nav.component';
 import { navData } from '../../../data';
 import { Link } from 'react-router-dom';
 import withUser from '../../../hoc/withUser.component';
 import levelAssesment from '../../../utils/levelAssesment';
 import { userLogout } from '../../../redux/user/user.actions';
 import { useDispatch } from 'react-redux';
+import { v1 as makeId } from 'uuid';
 
 const Menu = ({ $open, $onClose, currentUser }) => {
   const dispatch = useDispatch();
   const logout = () => dispatch(userLogout());
 
-  const getItems = (item, parentId) => {
-    // console.log(item);
+  const getItems = (item, parentId, deep) => {
+    const key = makeId();
     return (
-      <React.Fragment>
-        {item.items.map((navItem, index) => (
-          <SlideDown
-            key={navItem.id}
-            $title={navItem.title}
-            $deeper={true}
-            $parentId={parentId}
-            $childIndex={index}
-          >
-            <S.BlueLink to={navItem.url}>{`همه‌ی ${navItem.title}`}</S.BlueLink>
-            {navItem.items.map(subItem => (
-              <React.Fragment key={subItem.id}>
-                {subItem.items ? (
-                  getItems(subItem, navItem.id)
-                ) : (
-                  <Link to={subItem.url}>{subItem.title}</Link>
-                )}
-              </React.Fragment>
-            ))}
-          </SlideDown>
-        ))}
-      </React.Fragment>
+      <SlideDown
+        $title={item.title}
+        $deeper={true}
+        $parentId={parentId}
+        $childId={item.id}
+        key={key}
+        deep={deep}
+      >
+        <S.BlueLink to={item.url}>{`همه‌ی ${item.title}`}</S.BlueLink>
+        {item.items.map(subItem => {
+          return (
+            <React.Fragment key={makeId()}>
+              {subItem.items ? (
+                <SlideDown
+                  key={subItem.id}
+                  $title={subItem.title}
+                  $deeper={true}
+                  $parentId={item.id}
+                  $childId={subItem.id}
+                  deep={++deep}
+                >
+                  {getItems(subItem.items, subItem.id, ++deep)}
+                </SlideDown>
+              ) : (
+                <Link to={subItem.url}>{subItem.title}</Link>
+              )}
+            </React.Fragment>
+          );
+        })}
+      </SlideDown>
     );
   };
 
@@ -57,6 +67,7 @@ const Menu = ({ $open, $onClose, currentUser }) => {
             <S.UserBigIcon $color={levelAssesment(currentUser.score).color}>
               <UserIcon />
             </S.UserBigIcon>
+            <MiniNav />
           </React.Fragment>
         ) : (
           <React.Fragment>
@@ -73,14 +84,44 @@ const Menu = ({ $open, $onClose, currentUser }) => {
         )}
       </S.DetailsContainer>
       <S.NavContainer>
-        {navData.map(({ id, items, title }) => (
-          <S.NavItem key={id}>
-            <SlideDown $title={title} $parentId={id}>
-              <S.BlueLink to="/"> {`همه‌ی ${title}`}</S.BlueLink>
-              {items.map(item => getItems(item, id))}
-            </SlideDown>
-          </S.NavItem>
-        ))}
+        {navData.map(({ id, items, title }) => {
+          return (
+            <S.NavItem key={id}>
+              <SlideDown $title={title} $parentId={id} deep={0}>
+                <S.BlueLink to="/"> {`همه‌ی ${title}`}</S.BlueLink>
+                {items.map(item => (
+                  <React.Fragment key={makeId()}>
+                    {item.items.map(navItem => {
+                      return (
+                        <SlideDown
+                          key={navItem.id}
+                          $title={navItem.title}
+                          $deeper={true}
+                          $parentId={id}
+                          $childId={navItem.id}
+                          deep={1}
+                        >
+                          <S.BlueLink to={navItem.url}>{`همه‌ی ${navItem.title}`}</S.BlueLink>
+                          {navItem.items.map(subItem => {
+                            return (
+                              <React.Fragment key={subItem.id}>
+                                {subItem.items ? (
+                                  getItems(subItem, navItem.id, 2)
+                                ) : (
+                                  <Link to={subItem.url}>{subItem.title}</Link>
+                                )}
+                              </React.Fragment>
+                            );
+                          })}
+                        </SlideDown>
+                      );
+                    })}
+                  </React.Fragment>
+                ))}
+              </SlideDown>
+            </S.NavItem>
+          );
+        })}
       </S.NavContainer>
     </S.Container>
   );

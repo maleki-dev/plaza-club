@@ -5,21 +5,20 @@ import Arrow from '../../arrow/arrow.component';
 import { MenuContext } from '../../../providers/menu.provider';
 import { shallowEqual } from '../../../utils/compareObjects';
 
-const SlideDown = ({ children, $title, $parentId, ...otherProps }) => {
-  const { parent, child, setParent, setChild } = useContext(MenuContext);
+const SlideDown = ({ children, $title, $parentId, deep, ...otherProps }) => {
+  const { parent, setParent, child, setChild } = useContext(MenuContext);
   const [show, setShow] = useState(false);
-
-  console.log({ parent, child, otherProps });
   const clickHandler = () => {
-    if (otherProps.$childIndex !== undefined) {
-      // console.log(otherProps.$childIndex);
+    if (otherProps.$childId !== undefined) {
       setChild({
+        deep: deep,
         parentId: $parentId,
-        childId: otherProps.$childIndex,
+        childId: otherProps.$childId,
       });
       setShow(!show);
     } else {
       setChild({
+        deep: null,
         parentId: null,
         childId: null,
       });
@@ -29,18 +28,21 @@ const SlideDown = ({ children, $title, $parentId, ...otherProps }) => {
   };
 
   useEffect(() => {
-    if (otherProps.$childIndex !== undefined) {
-      !shallowEqual(child, { parentId: $parentId, childId: otherProps.$childIndex }) &&
+    parent.parentId !== $parentId && setShow(false);
+  }, [parent]);
+
+  useEffect(() => {
+    if (otherProps.$childId !== undefined) {
+      if (!shallowEqual(child, { parentId: $parentId, childId: otherProps.$childId, deep }))
         setShow(false);
-    } else {
-      parent.parentId !== $parentId && setShow(false);
+      if (child.parentId === otherProps.$childId) setShow(true);
     }
-  }, [parent, child]);
+  }, [child]);
 
   const itemProps = {
     before: <Arrow direction={show ? null : 'left'} fill={show ? 'primary' : 'onSurface'} />,
     $gap: '16',
-    onClick: clickHandler, //setShow(!show),
+    onClick: clickHandler,
     notlink: true,
   };
 

@@ -6,7 +6,6 @@ const modalRoot = document.getElementById('modal-root');
 // const scrollBarWidth = String(window.innerWidth - document.documentElement.clientWidth);
 const Modal = ({ isShowing, children }) => {
   useEffect(() => {
-    console.log('modal useEffect');
     const scrollBarWidth = String(window.innerWidth - document.documentElement.clientWidth);
     document.body.style.overflow = isShowing ? 'hidden' : 'auto';
     document.body.style.paddingRight = isShowing ? scrollBarWidth + 'px' : '0';
