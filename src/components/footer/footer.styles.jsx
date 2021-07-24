@@ -44,7 +44,7 @@ export const FooterNavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: ${({ theme }) => theme.pxToRem(32)};
-  gap: ${({ theme }) => theme.pxToRem(6)};
+  gap: ${({ theme }) => theme.pxToRem(8)};
 `;
 
 export const FooterEnamad = styled.div`

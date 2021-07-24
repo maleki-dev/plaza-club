@@ -21,8 +21,7 @@ export const NavContainer = styled.nav`
 export const MenuButton = styled.span`
   display: flex;
   align-items: baseline;
-  padding: ${({ theme }) => theme.pxToRem('0 16 16 24')};
-  margin-bottom: ${({ theme }) => theme.pxToRem(-16)};
+  padding: ${({ theme }) => theme.pxToRem('0 16')};
   cursor: pointer;
 `;
 
