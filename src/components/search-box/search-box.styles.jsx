@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect';
 export const SearchBoxContainer = styled.div`
   position: relative;
   display: flex;
+  margin: ${({ theme }) => theme.pxToRem('-4 0')};
 `;
 
 export const SearchBox = styled.div`

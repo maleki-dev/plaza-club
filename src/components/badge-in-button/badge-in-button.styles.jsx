@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Container = styled.span`
-  padding-top: ${({ theme }) => theme.pxToRem(4)};
+  padding-top: ${({ theme }) => theme.pxToRem(2)};
   margin: ${({ theme }) => theme.pxToRem('-2 0 -2 12')};
   border-radius: ${({ theme }) => theme.pxToRem(4)};
   background-color: ${({ theme }) => theme.color.secondary};

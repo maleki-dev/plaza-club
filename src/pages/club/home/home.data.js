@@ -19,7 +19,7 @@ export const widgetBoxData = {
       footer: {
         color: 'secondary',
         text: 'افزودن هم خرید جدید',
-        modal: toggle => <AddTeammate toggle={toggle} />,
+        modal: toggle => <AddTeammate action={e => e.preventDefault()} toggle={toggle} />,
       },
     },
   ],

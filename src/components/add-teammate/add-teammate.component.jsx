@@ -8,8 +8,8 @@ const AddTeammate = ({ toggle, action }) => {
     <>
       <h4>افزودن هم‌خرید جدید</h4>
       <S.Container>
-        <CustomInput placeholder="نام و نام خانوادگی" />
-        <CustomInput placeholder="آدرس ایمیل یا شماره موبایل" />
+        <CustomInput $placeholder="نام و نام خانوادگی" />
+        <CustomInput $placeholder="آدرس ایمیل یا شماره موبایل" />
         <S.ButtonGroup>
           <CustomButton $size="mediumWide" $link={true} onClick={toggle}>
             انصراف
