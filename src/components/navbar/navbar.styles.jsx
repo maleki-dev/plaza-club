@@ -7,17 +7,18 @@ const showStyles = css`
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: ${({ theme }) => theme.pxToRem(108)};
   right: 0;
   opacity: 0;
   visibility: hidden;
   display: flex;
   flex-direction: column;
   transition: opacity 0.3s;
-  max-height: ${({ theme }) => theme.pxToRem('385')};
+  /* max-height: ${({ theme }) => theme.pxToRem('385')}; */
   cursor: default;
   isolation: isolate;
+  background-color: ${({ theme }) => theme.color.background};
 
   ${({ $show }) => ($show ? showStyles : null)};
 `;

@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components/macro';
 
 const highContent = css`
-  padding: ${({ theme }) => theme.pxToRem('32 0')};
+  padding: ${({ theme }) => theme.pxToRem('32 16')};
 `;
 
 export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   border-top: ${({ theme }) => theme.border.solidStroke};
-  padding: ${({ theme }) => theme.pxToRem('24 16 16')};
+  /* padding: ${({ theme }) => theme.pxToRem('24 16 16')}; */
 `;
 
 export const FooterTop = styled.div`
-  padding-bottom: ${({ theme }) => theme.pxToRem(24)};
+  padding: ${({ theme }) => theme.pxToRem('24 16')};
   display: flex;
   gap: ${({ theme }) => theme.pxToRem(24)};
   border-bottom: ${({ theme }) => theme.border.solidStrokeVariant};
@@ -22,6 +22,7 @@ export const FooterTop = styled.div`
 export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: ${({ theme }) => theme.pxToRem('0 16')};
   margin-bottom: ${({ theme }) => theme.pxToRem(32)};
   ${props => (props.$high ? highContent : null)}
 `;

@@ -4,6 +4,10 @@ const leftDirection = css`
   transform: rotate(90deg);
 `;
 
+const rightDirection = css`
+  transform: rotate(-90deg);
+`;
+
 const upDirection = css`
   transform: rotate(180deg);
 `;
@@ -11,6 +15,7 @@ const upDirection = css`
 const getDirection = props => {
   if (props.direction === 'left') return leftDirection;
   else if (props.direction === 'up') return upDirection;
+  else if (props.direction === 'right') return rightDirection;
   else return null;
 };
 

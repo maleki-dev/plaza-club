@@ -1,9 +1,10 @@
 import styled from 'styled-components/macro';
+const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: calc(100vw - ${scrollBarWidth});
 `;
 
 export const Inner = styled.div`

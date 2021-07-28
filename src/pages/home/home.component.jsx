@@ -1,41 +1,16 @@
 import React from 'react';
 import * as S from './home.styles';
-import { withRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { userLogout } from '../../redux/user/user.actions';
-import CustomButton from '../../components/custom-button/custom-button.component';
 import Wrapper from '../../components/wrapper/wrapper.component';
+import Carousel from '../../components/carousel/carousel.component';
+import { carouselData } from '../../components/carousel/carousel.data';
 
-const Home = ({ history }) => {
-  const dispatch = useDispatch();
-  const currentUser = useSelector(state => state.user.currentUser);
-
-  const logoutClickHandler = e => {
-    e.preventDefault();
-    dispatch(userLogout());
-  };
-
-  const loginClickHandler = e => {
-    e.preventDefault();
-    history.push('/auth/sign-in');
-  };
-
+const Home = () => {
   return (
     <Wrapper>
       <S.Container>
-        <S.Heading>صفحه اصلی</S.Heading>
-        <S.Goto to="/club"> {'-->'} باشگاه مشتریان</S.Goto>
-        {currentUser ? (
-          <CustomButton $size="medium" $color="secondary" onClick={logoutClickHandler}>
-            خروج
-          </CustomButton>
-        ) : (
-          <CustomButton $size="medium" $color="secondary" onClick={loginClickHandler}>
-            ورود
-          </CustomButton>
-        )}
+        <Carousel slides={carouselData} autoPlay={3} scale={0.22} />
       </S.Container>
     </Wrapper>
   );
 };
-export default withRouter(Home);
+export default Home;
