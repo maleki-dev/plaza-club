@@ -60,3 +60,30 @@ export const carouselData = [
   //   href: '/',
   // },
 ];
+
+export const mobileCarouselData = [
+  {
+    id: 1,
+    imageUrl: './images/slider/mobile/payment.jpg',
+    alt: 'payment',
+    href: '/',
+  },
+  {
+    id: 2,
+    imageUrl: './images/slider/mobile/battery.jpg',
+    alt: 'battery',
+    href: '/',
+  },
+  {
+    id: 3,
+    imageUrl: './images/slider/mobile/razer.jpg',
+    alt: 'razer',
+    href: '/',
+  },
+  {
+    id: 4,
+    imageUrl: './images/slider/mobile/tsco.jpg',
+    alt: 'tsco',
+    href: '/',
+  },
+];
