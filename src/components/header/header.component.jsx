@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import SearchBox from '../search-box/search-box.component';
 import CustomButton from '../custom-button/custom-button.component';
 import HeaderNav from '../header-nav/header-nav.component';
@@ -63,12 +63,16 @@ const Header = ({ currentUser }) => {
   const cartDropDownButtonRef = useRef();
   const userDropDownButtonRef = useRef();
 
-  useClickInside(userDropDownButtonRef, () => setUserDropdown(!userDropdown));
-  useClickOutside(userDropDownButtonRef, () => setUserDropdown(false));
-  useClickInside(userDropDownRef, () => setUserDropdown(true));
   useClickInside(cartDropDownButtonRef, () => setCartDropdown(!cartDropdown));
-  useClickOutside(cartDropDownButtonRef, () => setCartDropdown(false));
-  useClickInside(cartDropDownRef, () => setCartDropdown(true));
+  useClickOutside(cartDropDownButtonRef, cartDropDownRef, () => setCartDropdown(false));
+  // useClickInside(cartDropDownRef, () => setCartDropdown(true));
+  useClickInside(userDropDownButtonRef, () => setUserDropdown(!userDropdown));
+  useClickOutside(userDropDownButtonRef, userDropDownRef, () => setUserDropdown(false));
+  // useClickInside(userDropDownRef, () => setUserDropdown(true));
+
+  useEffect(() => {
+    console.log({ userDropdown, cartDropdown });
+  }, [userDropdown, cartDropdown]);
 
   return (
     <>

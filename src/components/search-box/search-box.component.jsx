@@ -8,7 +8,8 @@ import SearchInput from '../search-input/search-input.component';
 const SearchBox = () => {
   const [searchBoxHidden, setSearchBoxHidden] = useState(true);
   const [inputValue, setInputValue] = useState('');
-  const clickRef = useRef(null);
+  const buttonRef = useRef(null);
+  const dropdownRef = useRef(null);
   const [debounce, setDebounce] = useState(undefined);
 
   const handleChange = e => {
@@ -21,14 +22,14 @@ const SearchBox = () => {
     );
   };
 
-  useClickInside(clickRef, () => setSearchBoxHidden(false));
-  useClickOutside(clickRef, () => setSearchBoxHidden(true));
+  useClickInside(buttonRef, () => setSearchBoxHidden(false));
+  useClickOutside(buttonRef, dropdownRef, () => setSearchBoxHidden(true));
 
   return (
     <S.SearchBoxContainer>
-      <SearchInput ref={clickRef} $handleChange={handleChange} $hasIcon={true} />
+      <SearchInput ref={buttonRef} $handleChange={handleChange} $hasIcon={true} />
       {searchBoxHidden ? null : (
-        <S.SearchBoxContent>
+        <S.SearchBoxContent ref={dropdownRef}>
           <SearchContent input={inputValue} />
         </S.SearchBoxContent>
       )}

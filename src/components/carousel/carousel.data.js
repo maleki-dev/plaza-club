@@ -17,12 +17,12 @@ export const carouselData = [
     alt: 'razer',
     href: '/',
   },
-  // {
-  //   id: 4,
-  //   imageUrl: './images/slider/tsco.jpg',
-  //   alt: 'tsco',
-  //   href: '/',
-  // },
+  {
+    id: 4,
+    imageUrl: './images/slider/tsco.jpg',
+    alt: 'tsco',
+    href: '/',
+  },
   // {
   //   id: 5,
   //   imageUrl: './images/slider/razer.jpg',

@@ -3,11 +3,13 @@ import * as S from './carousel.styles';
 // import { slides } from './carousel.data';
 import { ReactComponent as RightArrow } from '../../assets/images/svg/__arrow2xRight.svg';
 import { ReactComponent as LeftArrow } from '../../assets/images/svg/__arrow2xLeft.svg';
+import { isMobile } from 'react-device-detect';
+import { useSwipeable } from 'react-swipeable';
 
 const Carousel = props => {
   const { slides } = props;
   const firstSlide = slides[0];
-  const secondSlide = slides[1];
+  const secondSlide = slides.length === 2 ? { ...slides[1], id: 50 } : slides[1];
   const lastSlide = slides[slides.length - 1];
 
   const [state, setState] = useState({
@@ -45,18 +47,22 @@ const Carousel = props => {
     });
   };
 
-  const indicatorClickHandler = slideIndex => {
-    if (activeSlide === slideIndex) return;
+  const indicatorClickHandler = indicator => {
+    if (activeSlide === indicator) return;
 
     let _slidesCopy = [];
     const _slidesClone = _slides.map(_slide => {
       return { ..._slide, id: 50 };
     });
 
-    if (activeSlide < slideIndex) {
-      _slidesCopy = [_slidesClone[0], _slides[1], slides[slideIndex]];
-    } else if (activeSlide > slideIndex) {
-      _slidesCopy = [slides[slideIndex], _slides[1], _slidesClone[2]];
+    if (activeSlide < indicator) {
+      _slidesCopy = [_slidesClone[0], _slides[1], slides[indicator]];
+    } else if (activeSlide > indicator) {
+      _slidesCopy = [slides[indicator], _slides[1], _slidesClone[2]];
+    }
+
+    if (slides.length === 2) {
+      _slidesCopy = _slides;
     }
 
     setState({
@@ -68,8 +74,8 @@ const Carousel = props => {
       setState({
         ...state,
         _slides: _slidesCopy,
-        activeSlide: slideIndex,
-        translate: activeSlide > slideIndex ? 0 : activeSlide < slideIndex ? '200%' : '100%',
+        activeSlide: indicator,
+        translate: activeSlide > indicator ? 0 : activeSlide < indicator ? '200%' : '100%',
       });
       clearTimeout(id);
     }, 0);
@@ -85,6 +91,11 @@ const Carousel = props => {
       _slides = [slides[slides.length - 2], lastSlide, firstSlide];
     else if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide];
     else _slides = slides.slice(activeSlide - 1, activeSlide + 2);
+
+    if (slides.length === 2) {
+      if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide];
+      else if (activeSlide === 1) _slides = [firstSlide, lastSlide, { ...firstSlide, id: 50 }];
+    }
 
     setState({
       ...state,
@@ -142,8 +153,17 @@ const Carousel = props => {
     };
   }, []);
 
+  const mobileHandlers = useSwipeable(
+    isMobile
+      ? {
+          onSwipedLeft: prevSlide,
+          onSwipedRight: nextSlide,
+        }
+      : {},
+  );
+
   return (
-    <S.Container>
+    <S.Container {...mobileHandlers}>
       {slides.length === 1 ? null : (
         <React.Fragment>
           <S.LeftArrow onClick={nextSlide}>

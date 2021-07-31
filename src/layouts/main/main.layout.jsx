@@ -6,6 +6,7 @@ import { MobileView, BrowserView } from 'react-device-detect';
 import NavProvider from '../../providers/nav.provider';
 import Carousel from '../../components/carousel/carousel.component';
 import { carouselData } from '../../components/carousel/carousel.data';
+import { CarouselContainer } from './main.styles';
 
 const MainLayout = ({ children }) => (
   <>
@@ -13,13 +14,14 @@ const MainLayout = ({ children }) => (
       <NavProvider>
         <Header />
       </NavProvider>
-
       {children}
       <Footer />
     </BrowserView>
     <MobileView>
       <HeaderMobile />
-      <Carousel slides={carouselData} autoPlay={3} scale="0.5" />
+      <CarouselContainer>
+        <Carousel slides={carouselData} autoPlay={3} scale="0.5" />
+      </CarouselContainer>
     </MobileView>
   </>
 );

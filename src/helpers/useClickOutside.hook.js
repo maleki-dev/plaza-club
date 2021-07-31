@@ -1,17 +1,22 @@
 import { useEffect } from 'react';
 
-const useClickOutside = (ref, callBack) => {
+const useClickOutside = (buttonRef, dropdownRef, callBack) => {
   useEffect(() => {
     const handleClick = e => {
-      if (ref.current && !ref.current.contains(e.target)) {
+      if (
+        buttonRef.current &&
+        dropdownRef.current &&
+        !buttonRef.current.contains(e.target) &&
+        !dropdownRef.current.contains(e.target)
+      ) {
         callBack();
       }
     };
-    window.addEventListener('click', handleClick);
+    window.addEventListener('mousedown', handleClick);
     return () => {
-      window.removeEventListener('click', handleClick);
+      window.removeEventListener('mousedown', handleClick);
     };
-  }, []);
+  }, [buttonRef, dropdownRef, callBack]);
 };
 
 export default useClickOutside;
