@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as S from './carousel.styles';
-// import { slides } from './carousel.data';
 import { ReactComponent as RightArrow } from '../../assets/images/svg/__arrow2xRight.svg';
 import { ReactComponent as LeftArrow } from '../../assets/images/svg/__arrow2xLeft.svg';
 import { isMobile } from 'react-device-detect';
@@ -22,12 +21,10 @@ const Carousel = props => {
 
   const { activeSlide, translate, _slides, transition, transitioning } = state;
 
-  const transitionRef = useRef();
-  const onTransitionRef = useRef();
+  const intervalRef = useRef();
   const sliderRef = useRef();
-  const autoPlayRef = useRef();
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (transitioning) return;
 
     setState({
@@ -35,7 +32,7 @@ const Carousel = props => {
       translate: '200%',
       activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
     });
-  };
+  }, [activeSlide, transitioning]);
 
   const prevSlide = () => {
     if (transitioning) return;
@@ -48,7 +45,7 @@ const Carousel = props => {
   };
 
   const indicatorClickHandler = indicator => {
-    if (activeSlide === indicator) return;
+    if (activeSlide === indicator || transitioning) return;
 
     let _slidesCopy = [];
     const _slidesClone = _slides.map(_slide => {
@@ -81,11 +78,11 @@ const Carousel = props => {
     }, 0);
   };
 
-  const onTransition = () => {
+  const onTransition = useCallback(() => {
     setState({ ...state, transitioning: true });
-  };
+  }, [state]);
 
-  const smoothTransition = () => {
+  const smoothTransition = useCallback(() => {
     let _slides = [];
     if (activeSlide === slides.length - 1)
       _slides = [slides[slides.length - 2], lastSlide, firstSlide];
@@ -103,13 +100,7 @@ const Carousel = props => {
       transition: 0,
       translate: '100%',
     });
-  };
-
-  useEffect(() => {
-    autoPlayRef.current = nextSlide;
-    transitionRef.current = smoothTransition;
-    onTransitionRef.current = onTransition;
-  });
+  }, [activeSlide, transitioning]);
 
   useEffect(() => {
     if (transition === 0) setState({ ...state, transition: 0.5, transitioning: false });
@@ -117,41 +108,31 @@ const Carousel = props => {
 
   useEffect(() => {
     const play = () => {
-      autoPlayRef.current();
+      nextSlide();
     };
 
-    let interval = null;
-
     if (props.autoPlay) {
-      interval = setInterval(play, props.autoPlay * 1000);
+      intervalRef.current = setInterval(play, props.autoPlay * 1000);
     }
 
     return () => {
-      if (props.autoPlay) {
-        clearInterval(interval);
+      if (props.autoPlay && intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     };
-  }, [activeSlide]);
+  }, [nextSlide]);
 
   useEffect(() => {
     const slider = sliderRef.current;
 
-    const transitionEnd = () => {
-      transitionRef.current();
-    };
-
-    const transitionStart = () => {
-      onTransitionRef.current();
-    };
-
-    slider.addEventListener('transitionstart', transitionStart);
-    slider.addEventListener('transitionend', transitionEnd);
+    slider.addEventListener('transitionstart', onTransition);
+    slider.addEventListener('transitionend', smoothTransition);
 
     return () => {
-      slider.removeEventListener('transitionend', transitionStart);
-      slider.removeEventListener('transitionend', transitionEnd);
+      slider.removeEventListener('transitionstart', onTransition);
+      slider.removeEventListener('transitionend', smoothTransition);
     };
-  }, []);
+  }, [onTransition, smoothTransition]);
 
   const mobileHandlers = useSwipeable(
     isMobile
